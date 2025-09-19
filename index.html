@@ -21,10 +21,10 @@
     img{max-width:100%;display:block;height:auto}
     header{position:sticky;top:0;z-index:50;background:rgba(11,13,18,.85);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--line)}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px flex-wrap: wrap;}
     .logo{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.2px}
     .logo-dot{width:10px;height:10px;border-radius:50%;background:var(--brand);box-shadow:0 0 16px var(--brand)}
-    .menu{display:flex;gap:18px}
+    .menu{display:flex;gap:18px flex-wrap: wrap;}
     .menu a{color:var(--muted);font-weight:600}
     .menu a.active,.menu a:focus-visible,.menu a:hover{color:var(--text)}
 
@@ -716,6 +716,20 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
 <script>
   // 年表示
   document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+
+<script>
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.getAttribute('data-tab');
+    document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected','false'));
+    tab.setAttribute('aria-selected','true');
+    document.querySelectorAll('#tab-panels .panel').forEach(panel => {
+      panel.hidden = panel.getAttribute('data-panel') !== target;
+    });
+  });
+});
 </script>
 
 </body>
