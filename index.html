@@ -170,13 +170,14 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
 
 
 .panel[data-panel="dizz"] .fanbox-box {
-  margin: 12px auto;           
-  padding: 12px;
+  margin: 12px 0; 
+  padding: clamp(10px,2.5vw,14px);
   background: #1d2028;
   border: 1px solid #333;
-  border-radius: 6px;
+  border-radius: 10px;
   text-align: center;
-  width: 560px;                
+  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
@@ -337,6 +338,32 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
 .tab{ white-space: nowrap; }
 @media (max-width:640px){
   .tab{ font-size:14px; padding:10px 12px; }
+}
+
+
+/* Ensure tall DIZZ images display on phones */
+.kv img[src*="_dizzy_fileomote2.png"],
+.kv img[src*="_dizzy_naka0204.png"]{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:none;
+  object-fit:contain;
+}
+
+
+.panel[data-panel="dizz"] .fanbox-box a{
+  display:block;
+  width:100%;
+  max-width:100%;
+  text-wrap:balance;
+  white-space:normal;
+  font-weight:700;
+  line-height:1.4;
+  padding: 10px 12px;
+}
+@media (min-width:641px){
+  .panel[data-panel="dizz"] .fanbox-box a{ display:inline-block; width:auto; }
 }
 
 </style>
@@ -519,7 +546,7 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
   
   <figure class="kv">
     <a href="assets/img/_dizzy_fileomote2.png" target="_blank">
-      <img src="assets/img/_dizzy_fileomote2.png" alt="Dizz 表イラスト"  style="width:100%; height:auto;"/>
+      <img src="assets/img/_dizzy_fileomote2.png" alt="Dizz 表イラスト"  style="width:100%; height:auto;"/ loading="eager">
     </a>
     <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">
       相反する二人
@@ -537,7 +564,7 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
 
   <figure class="kv">
     <a href="assets/img/_dizzy_naka0204.png" target="_blank">
-      <img src="assets/img/_dizzy_naka0204.png" alt="Dizz 戦闘シーンイラスト" loading="lazy" style="width:100%; height:auto;"/>
+      <img src="assets/img/_dizzy_naka0204.png" alt="Dizz 戦闘シーンイラスト"  style="width:100%; height:auto;"/ loading="eager">
     </a>
     <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">
       帰還
@@ -777,7 +804,7 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
     <div class="wrap foot">
       <div>© <span id="year"></span> Lead Princess Series (Guide)</div>
       <div>
-        <a href="#top">Top</a> / <a href="#quickstart">Quick Start</a> / <a href="#story">Story</a> / <a href="#characters">Characters</a> / <a href="#timeline">Timeline</a>
+        <a href="#top">Top</a> / <a href="#story">Story</a> / <a href="#characters">Characters</a> / <a href="#timeline">Timeline</a>
       </div>
     </div>
   </footer>
