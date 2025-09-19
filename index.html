@@ -6,11 +6,9 @@
   <title>鉛姫シリーズ 公式ガイド</title>
   <meta name="description" content="ボカロP nyanyannya による『鉛姫シリーズ』の入門・総合ガイド。ストーリー、キャラクター、時系列、最新情報、動画・小説・FANBOXへの導線を網羅。" />
   <meta name="theme-color" content="#0b0d12" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-
   <link rel="preload" as="image" href="assets/img/鉛姫シリーズイラスト.jpg" />
   
   <link rel="preload" as="image" href="assets/bg/bg.png" />
@@ -30,7 +28,7 @@
     .logo{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.2px}
     .logo-dot{width:10px;height:10px;border-radius:50%;background:var(--brand);box-shadow:0 0 16px var(--brand)}
     .menu{display:flex;gap:18px flex-wrap: wrap;}
-    .menu a{color:var(--muted);font-weight:600;font-size:15px}
+    .menu a{color:var(--muted);font-weight:600;font-size:15px;letter-spacing:0.04em}
     .menu a.active,.menu a:focus-visible,.menu a:hover{color:var(--text)}
 
     .hero{padding:28px 0 8px}
@@ -278,80 +276,63 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
 
   
 @media (max-width: 640px) {
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-    padding: 8px 0;
-    gap: 6px;
-  }
-  .menu {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-}
-
-
-/* Slider: responsive, scroll-snap, no duplicates */
-.slider{position:relative; overflow:hidden;}
-.slider .track{
-  display:flex;
-  gap:16px;
-  overflow-x:auto;
-  overflow-y:hidden;
-  scroll-behavior:smooth;
-  scroll-snap-type:x mandatory;
-  padding-bottom:4px;
-}
-.slider .track::-webkit-scrollbar{height:6px}
-.slider .track::-webkit-scrollbar-thumb{background:#2a2f3f;border-radius:3px}
-.slider .card{
-  flex:0 0 calc((100% - 32px)/3);
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:12px;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  scroll-snap-align:start;
-}
-.slider .card img{width:100%; height:160px; object-fit:cover}
-.slider .card .body{padding:12px; flex:1}
-@media (max-width:980px){
-  .slider .card{flex:0 0 calc((100% - 16px)/2);}
-}
-@media (max-width:640px){
-  .slider .card{flex:0 0 100%;}
-}
-
-
-@media (max-width:640px){
-  .menu{width:100%; overflow-x:auto; white-space:nowrap; padding-bottom:4px;}
+  .nav { flex-direction: column; align-items: flex-start; height: auto; padding: 8px 0; gap: 6px; }
+  .menu { width:100%; overflow-x:auto; white-space:nowrap; gap:12px; }
   .menu a{display:inline-block;}
 }
 
 
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 14px}
+.tab{
+  border:1px solid var(--line);
+  background:#141824;
+  color:var(--text);
+  padding:10px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:15px;
+  line-height:1;
+}
+.tab:focus-visible{outline:3px solid var(--brand)}
+.tab[aria-selected="true"]{
+  outline:2px solid var(--brand);
+  background:#0f1524;
+  box-shadow:inset 0 0 0 1px rgba(102,178,255,.25);
+}
 @media (max-width:640px){
-  .logo{gap:8px; line-height:1.2}
+  .tab{font-size:16px;padding:12px 16px;border-radius:14px}
 }
 
 
-.menu a{
-  letter-spacing: 0.04em;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  font-kerning: normal;
-}
-.logo{
-  letter-spacing: 0.02em;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+.kv-pair{display:flex; gap:16px; justify-content:center; margin-top:8px; flex-wrap:wrap;}
+.kv-pair .kv{flex:1; max-width:30%; text-align:center;}
 @media (max-width:980px){
-  .menu{gap: 14px;}
+  .kv-pair{flex-direction:row}
+  .kv-pair .kv{max-width:48%}
 }
-@media (min-width:981px){
-  .menu{gap: 22px;}
+@media (max-width:640px){
+  .kv-pair{flex-direction:column; align-items:stretch}
+  .kv-pair .kv{max-width:100%}
+}
+
+
+.slider{--fade: linear-gradient(90deg, rgba(11,13,18,1), rgba(11,13,18,0));}
+.slider::before,
+.slider::after{
+  content:"";
+  position:absolute;
+  top:0;bottom:0;width:24px;
+  pointer-events:none;
+}
+.slider::before{left:0;background:var(--fade)}
+.slider::after{right:0;background:linear-gradient(270deg, rgba(11,13,18,1), rgba(11,13,18,0))}
+.slider-hint{margin:6px 2px 0; font-size:12px; color:var(--muted)}
+@media (hover:hover){
+  .slider-hint::after{content:" ← スワイプ / スクロール →";}
+}
+@media (hover:none){
+  .slider-hint::after{content:" ← 横にスワイプできます →";}
 }
 
 </style>
@@ -531,9 +512,9 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
 
 
 
-<div class="kv-pair" style="display:flex; gap:16px; justify-content:center; margin-top:8px; flex-wrap:wrap;">
+<div class="kv-pair" class="kv-pair">
   
-  <figure class="kv" style="flex:1; max-width:30%; text-align:center;">
+  <figure class="kv">
     <a href="assets/img/_dizzy_fileomote2.png" target="_blank">
       <img src="assets/img/_dizzy_fileomote2.png" alt="Dizz 表イラスト" loading="lazy" style="width:100%; height:auto;"/>
     </a>
@@ -542,7 +523,7 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
     </figcaption>
   </figure>
 
-  <figure class="kv" style="flex:1; max-width:30%; text-align:center;">
+  <figure class="kv">
     <a href="assets/img/DIZZ_キャラ紹介.png" target="_blank">
       <img src="assets/img/DIZZ_キャラ紹介.png" alt="Dizz キャラクター紹介図" loading="lazy" style="width:100%; height:auto;"/>
     </a>
@@ -551,7 +532,7 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
     </figcaption>
   </figure>
 
-  <figure class="kv" style="flex:1; max-width:30%; text-align:center;">
+  <figure class="kv">
     <a href="assets/img/_dizzy_naka0204.png" target="_blank">
       <img src="assets/img/_dizzy_naka0204.png" alt="Dizz 戦闘シーンイラスト" loading="lazy" style="width:100%; height:auto;"/>
     </a>
@@ -754,6 +735,7 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
       </article>
 
     </div>
+    <p class="slider-hint" aria-hidden="true"></p>
     </div>
   </div>
 </section>
@@ -810,25 +792,24 @@ document.querySelectorAll('.tab').forEach(tab => {
     const target = tab.getAttribute('data-tab');
     document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected','false'));
     tab.setAttribute('aria-selected','true');
-    document.querySelectorAll('#tab-panels .panel').forEach(panel => {
+    document.querySelectorAll('.panel[data-panel]').forEach(panel => {
       panel.hidden = panel.getAttribute('data-panel') !== target;
     });
   });
 });
-</script>
-
-
-<script>
 (function(){
   const active = document.querySelector('.tab[aria-selected="true"]');
   if(active){
     const target = active.getAttribute('data-tab');
-    document.querySelectorAll('#tab-panels .panel').forEach(p=>{
+    document.querySelectorAll('.panel[data-panel]').forEach(p=>{
       p.hidden = p.getAttribute('data-panel') !== target;
     });
   }
 })();
 </script>
 
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
