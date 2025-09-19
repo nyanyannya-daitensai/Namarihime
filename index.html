@@ -298,6 +298,47 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
   .menu a{letter-spacing:0.05em}
 }
 
+
+/* DIZZ video sizing */
+.panel[data-panel="dizz"] .video{
+  max-width: 960px;
+  margin: 12px auto;
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+.panel[data-panel="dizz"] .video iframe{
+  position: static !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+/* DIZZ image trio: robust grid */
+.kv-pair{
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+  justify-items: stretch;
+  align-items: start;
+}
+.kv-pair .kv{ text-align: center; }
+@media (max-width: 980px){
+  .kv-pair{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+  .kv-pair{ grid-template-columns: 1fr; }
+}
+.kv img{ display:block; width:100%; height:auto; }
+
+
+/* Tabs: single-line labels */
+.tabs{ gap: 10px; flex-wrap: wrap; }
+.tab{ white-space: nowrap; }
+@media (max-width:640px){
+  .tab{ font-size:14px; padding:10px 12px; }
+}
+
 </style>
 </head>
 <body>
@@ -475,9 +516,9 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
 
 
 
-<div class="kv-pair" style="display:flex; gap:16px; justify-content:center; margin-top:8px; flex-wrap:wrap;">
+<div class="kv-pair" class="kv-pair">
   
-  <figure class="kv" style="flex:1; max-width:30%; text-align:center;">
+  <figure class="kv">
     <a href="assets/img/_dizzy_fileomote2.png" target="_blank">
       <img src="assets/img/_dizzy_fileomote2.png" alt="Dizz 表イラスト"  style="width:100%; height:auto;"/>
     </a>
@@ -486,7 +527,7 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
     </figcaption>
   </figure>
 
-  <figure class="kv" style="flex:1; max-width:30%; text-align:center;">
+  <figure class="kv">
     <a href="assets/img/DIZZ_キャラ紹介.png" target="_blank">
       <img src="assets/img/DIZZ_キャラ紹介.png" alt="Dizz キャラクター紹介図" loading="lazy" style="width:100%; height:auto;"/>
     </a>
@@ -495,7 +536,7 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
     </figcaption>
   </figure>
 
-  <figure class="kv" style="flex:1; max-width:30%; text-align:center;">
+  <figure class="kv">
     <a href="assets/img/_dizzy_naka0204.png" target="_blank">
       <img src="assets/img/_dizzy_naka0204.png" alt="Dizz 戦闘シーンイラスト" loading="lazy" style="width:100%; height:auto;"/>
     </a>
