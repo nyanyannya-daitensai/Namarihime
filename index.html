@@ -10,465 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/img/鉛姫シリーズイラスト.jpg" />
-  
   <link rel="preload" as="image" href="assets/bg/bg.png" />
-  <style>
-    :root{
-      --bg:#0b0d12; --card:#12151d; --muted:#8c95a6; --text:#e9edf3; --brand:#66b2ff; --brand-2:#ff8c66; --line:#1b2030;
-      --max:1200px; --radius:18px; --radius-lg:22px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family: "Inter", "Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Meiryo UI", "Meiryo", sans-serif;line-height:1.7}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    img{max-width:100%;display:block;height:auto}
-    header{position:sticky;top:0;z-index:50;background:rgba(11,13,18,.85);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--line)}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .logo{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.2px}
-    .logo-dot{width:10px;height:10px;border-radius:50%;background:var(--brand);box-shadow:0 0 16px var(--brand)}
-    .menu{display:flex;gap:18px}
-    .menu a{color:var(--muted);font-weight:600;font-size:15px}
-    .menu a.active,.menu a:focus-visible,.menu a:hover{color:var(--text)}
-
-    .hero{padding:28px 0 8px}
-    .hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
-    .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:16px}
-    .hero h1{margin:6px 0 6px;font-size:30px}
-    .lead{color:var(--muted);margin:0 0 10px}
-    .yt-wrap{position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000}
-    .yt-wrap iframe{position:absolute;inset:0;width:100%;height:100%}
-    .kv{border-radius:14px;overflow:hidden;border:1px solid var(--line)}
-    .kv img{width:100%;height:auto;display:block}
-
-    .section{padding:24px 0}
-    .section h2{font-size:22px;margin:0 0 12px}
-    .muted{color:var(--muted)}
-
-    .grid{display:grid;gap:16px}
-    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-
-    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
-    .meta{color:var(--muted);font-size:12px}
-
-    
-    .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-    .btn{appearance:none;border:1px solid var(--line);background:#0e121a;color:var(--text);padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:700}
-    .btn.primary{outline:2px solid var(--brand)}
-
-    
-    .slider{position:relative}
-    .slider .track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/3);gap:16px;overflow:hidden;scroll-behavior:smooth}
-    .slider .item{display:flex;flex-direction:column;gap:8px}
-    .thumb{width:100%;aspect-ratio:16/9;border-radius:12px;background:#0c0f16;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px}
-    .slider .controls{display:flex;justify-content:flex-end;gap:8px;margin:8px 0 0}
-
-    
-    .tabs{display:flex;gap:8px;margin:8px 0 12px}
-    .tab{border:1px solid var(--line);background:#0e121a;color:var(--text);padding:8px 12px;border-radius:10px;cursor:pointer}
-    .tab[aria-selected="true"]{outline:2px solid var(--brand);}
-
-    
-    .char-card{display:grid;grid-template-columns:88px 1fr;gap:12px}
-    .avatar{width:88px;height:88px;border-radius:12px;background:#0c0f16;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted)}
-    .badge{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid var(--line);font-size:12px;color:var(--muted)}
-
-    
-    .timeline{position:relative;margin:10px 0 0;padding-left:56px;list-style:none}
-    .timeline:before{content:"";position:absolute;left:28px;top:0;bottom:0;width:2px;background:linear-gradient(var(--brand),transparent)}
-    .tl-item{position:relative;margin:0 0 16px}
-    .tl-item:before{content:"";position:absolute;left:-34px;top:.6em;width:12px;height:12px;border-radius:50%;background:var(--brand-2);box-shadow:0 0 8px var(--brand-2)}
-
-    footer{border-top:1px solid var(--line);margin-top:24px}
-    .foot{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding:16px 0;color:var(--muted);font-size:13px}
-
-    @media (max-width:980px){
-      .hero-inner{grid-template-columns:1fr}
-      .grid.cols-2{grid-template-columns:1fr}
-      .grid.cols-3{grid-template-columns:1fr}
-      .slider .track{grid-auto-columns:85%}
-      .timeline{padding-left:52px}
-      .timeline:before{left:26px}
-      .tl-item:before{left:-32px}
-    }
-
-
-.bg-loop{
-  position:fixed;
-  inset:0;
-  z-index:0;
-  pointer-events:none;
-  background:url("assets/bg/bg.png") repeat-x center/auto 100%;
-  opacity:0.5; 
-  will-change: background-position;
-}
-@keyframes pan-bg{ from{background-position:0 50%} to{background-position:-1600px 50%} }
-
-
-body > header, body > main, body > footer { position: relative; z-index: 1; }
-.panel, .card { background-color: var(--card) !important; background-image: none !important; }
-.yt-wrap, .kv { background-color:#000 !important; }
-
-
-.kv figcaption{
-  margin-top:8px;
-  font-size:12px;
-  line-height:1.6;
-  color:var(--muted);
-  text-align:right;
-}
-
-
-.char-card {
-  display: grid;
-  grid-template-columns: 110px 1fr; 
-  gap: 12px;
-  align-items: start;
-}
-
-
-.char-card .avatar {
-  width: 100%;
-  aspect-ratio: 3 / 4;      
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: #0c0f16;
-  display: block;
-  padding: 0;               
-}
-
-
-.char-card .avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;        
-  object-position: center;  
-  display: block;
-}
-
-
-.char-card h3 {
-  margin: 0 0 6px;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.char-card .meta {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.char-card .avatar img[alt="リーディア"] { object-position: 50% 35%; }
-.char-card .avatar img[alt="キャッシュ"] { object-position: 50% 30%; }
-.char-card .avatar img[alt="フィロ"] { object-position: 50% 35%; }
-.char-card .avatar img[alt="チキータ"] { object-position: 50% 35%; }
-.char-card .avatar img[alt="ファン"] { object-position: 50% 30%; }
-.char-card .avatar img[alt="ルージュ"] { object-position: 50% 28%; }
-.char-card .avatar img[alt="ライカ"] { object-position: 50% 33%; }
-
-
-.panel[data-panel="dizz"] .fanbox-box {
-  margin: 12px 0; 
-  padding: clamp(10px,2.5vw,14px);
-  background: #1d2028;
-  border: 1px solid #333;
-  border-radius: 10px;
-  text-align: center;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.panel[data-panel="dizz"] .fanbox-box a {
-  display: inline-block;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.panel[data-panel="dizz"] .fanbox-box a:hover {
-  text-decoration: underline;
-}
-
-
-.panel[data-panel="dizz"] .video {
-  text-align: center;
-  margin-top: 12px;
-}
-.panel[data-panel="dizz"] .video iframe {
-  display: inline-block;
-}
-
-.panel[data-panel="kado"] .book-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap; 
-  margin-top: 20px;
-}
-
-.panel[data-panel="kado"] .book-item {
-  width: 160px;      
-  text-align: center;
-}
-
-.panel[data-panel="kado"] .book-item img {
-  width: 100%;       
-  height: auto;
-  border-radius: 6px;
-  border: 1px solid #333;
-}
-
-.panel[data-panel="kado"] .book-item p {
-  margin-top: 6px;
-  font-size: 0.85rem;
-  color: #fff;
-  line-height: 1.4;
-}
-
-
-.slider {
-  position: relative;
-  overflow: hidden;
-}
-
-.slider .track {
-  display: flex;
-  gap: 16px;
-  transition: transform 0.3s ease;
-}
-
-.slider .card {
-  flex: 0 0 calc(33.333% - 16px); 
-  background: var(--card, #fff);
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.slider .card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
-
-.slider .card .body {
-  padding: 8px 12px;
-  flex: 1;
-}
-
-.slider .card h3 {
-  font-size: 1rem;
-  margin: 0 0 6px;
-}
-
-.slider .card p {
-  font-size: 0.875rem;
-  color: #666;
-}
-
-
-
-  
-
-
-@media (max-width:640px){
-  #fanbox .slider .track{display:block; overflow:visible; scroll-snap-type:none}
-  #fanbox .slider .card{flex:1 1 auto; width:100%; margin-bottom:12px}
-  #fanbox .slider::before, #fanbox .slider::after{display:none}
-  #fanbox .slider-hint{display:none}
-}
-
-
-.kv img{display:block; width:100%; height:auto}
-
-
-@media (max-width:640px){
-  html{ -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-  .nav{ flex-direction: column; align-items: flex-start; height:auto; padding:8px 0; gap:6px; }
-  .menu{ width:100%; flex-wrap: wrap; overflow: visible; white-space: normal; gap: 10px; }
-  .menu a{ display:inline-flex; align-items:center; font-size:14px; letter-spacing:0.03em; line-height:1.3; }
-}
-
-
-@media (min-width:981px){
-  .menu a{letter-spacing:0.05em}
-}
-
-
-/* DIZZ video sizing */
-.panel[data-panel="dizz"] .video{
-  max-width: 960px;
-  margin: 12px auto;
-  position: relative;
-  aspect-ratio: 16 / 9;
-}
-.panel[data-panel="dizz"] .video iframe{
-  position: static !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-
-/* DIZZ image trio: robust grid */
-.kv-pair{
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 8px;
-  justify-items: stretch;
-  align-items: start;
-}
-.kv-pair .kv{ text-align: center; }
-@media (max-width: 980px){
-  .kv-pair{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 640px){
-  .kv-pair{ grid-template-columns: 1fr; }
-}
-.kv img{ display:block; width:100%; height:auto; }
-
-
-/* Tabs: single-line labels */
-.tabs{ gap: 10px; flex-wrap: wrap; }
-.tab{ white-space: nowrap; }
-@media (max-width:640px){
-  .tab{ font-size:14px; padding:10px 12px; }
-}
-
-
-/* Ensure tall DIZZ images display on phones */
-.kv img[src*="dizzy_fileomote2.png"],
-.kv img[src*="dizzy_naka0204.png"]{
-  display:block;
-  width:100%;
-  height:auto;
-  max-height:none;
-  object-fit:contain;
-}
-
-
-.panel[data-panel="dizz"] .fanbox-box a{
-  display:block;
-  width:100%;
-  max-width:100%;
-  text-wrap:balance;
-  white-space:normal;
-  font-weight:700;
-  line-height:1.4;
-  padding: 10px 12px;
-}
-@media (min-width:641px){
-  .panel[data-panel="dizz"] .fanbox-box a{ display:inline-block; width:auto; }
-}
-
-/* === 最新情報バー（ベース）=== */
-.newsbar{
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  background:rgba(13,16,22,.9);
-  backdrop-filter:saturate(1.2) blur(8px);
-}
-.newsbar .wrap{ padding:0 20px; }
-.news-inner{ display:flex; align-items:center; gap:10px; min-height:40px; }
-.news-label{
-  display:inline-flex; align-items:center; justify-content:center;
-  height:22px; padding:0 8px; border-radius:999px;
-  font-size:12px; font-weight:700; letter-spacing:.02em;
-  color:#0b0d12;
-  background:linear-gradient(90deg,var(--brand),#7fd1ff);
-  box-shadow:0 0 10px rgba(102,178,255,.45);
-}
-.news-track{ display:flex; gap:12px; overflow:auto; -webkit-overflow-scrolling:touch; }
-.news-item{ white-space:nowrap; text-overflow:ellipsis; overflow:hidden; }
-
-
-/* === 最新情報バー：右寄せ＋拡大/スマホでも切れない補強（上書き用） === */
-.newsbar .wrap{
-  /* 右側を少し広めに取って、端での食い込みを防止 */
-  padding-inline: 8px 20px;
-}
-.news-inner{
-  justify-content: flex-start;   /* ラベルと本文を隣接表示に */
-  min-width: 0;
-  margin-left: auto;             /* 全体ブロックを右端へ寄せる */
-}
-.news-track{
-  margin-left: auto;          /* ← ラベルの右側にトラックを寄せる */
-  max-width: 100%;
-  padding-inline: 8px;        /* ← 端の余白を確保（スクロール末端の見切れ防止） */
-  scroll-snap-type: x proximity; /* ← mandatoryだと端で切れがち。緩めに */
-  overscroll-behavior-inline: contain;
-}
-/* スクロール末端での食い込み防止にダミー余白 */
-.news-track::after{
-  content:"";
-  flex: 0 0 8px;
-}
-
-.news-label{
-  /* 端末の自動拡大があっても暴れないようにさらに抑制 */
-  font-size: clamp(11px, 2.4vw, 13px);
-  height: 22px;
-  white-space: nowrap;
-}
-
-/* アイテムは1行・省略記号。拡大時も「はみ出さずスクロールで見せる」 */
-.news-item{
-  font-size: clamp(12px, 2.2vw, 14px);
-  line-height: 1.2;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  flex-shrink: 0;
-  /* 端末幅に応じて“表示幅の上限”を可変に（PC拡大でも切れない） */
-  max-width: min(60vw, 640px);
-}
-
-@media (max-width: 980px){
-  .news-item{ max-width: min(75vw, 560px); }
-}
-@media (max-width: 640px){
-  .news-inner{ min-height: 46px; }
-  .news-item{ max-width: 88vw; padding: 8px 10px; }
-  .news-label{ font-size: 12px; height: 24px; }
-}
-
-/* === 最新ラベルと本文を隣接させる最終上書き === */
-.news-inner{
-  /* 全体は右端へ寄せつつ、ラベルと本文の間隔だけ固定 */
-  justify-content: flex-end;
-  gap: 8px;
-}
-
-/* ← 最重要：auto を打ち消す */
-.news-track{
-  margin-left: 0 !important;
-}
-
-/* === 最新情報：サイズ微調整＆非表示トグル === */
-.news-label{
-  font-size: clamp(10px, 1.6vw, 12px) !important;
-  height: 20px !important;
-  padding: 0 7px !important;
-}
-.news-item{
-  font-size: clamp(11px, 1.9vw, 13px) !important;
-}
-
-/* JSで hidden を付けたときに確実に消す */
-.newsbar[hidden]{ display: none !important; }
-
-</style>
+  <!-- 外部CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  
+  <!-- 背景ループ -->
   <div class="bg-loop" aria-hidden="true"></div>
-  
 
   <header>
     <div class="wrap nav">
@@ -485,41 +33,22 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
         <a href="#links">リンク</a>
       </nav>
     </div>
-	
-	<!-- ############################-->	
-	<!-- ###########最新情報##########-->	
-	<!-- ############################-->	
-	
-	 <!-- ▼ 最新情報：ヘッダー直下 一行帯 -->
+
+    <!-- 最新情報帯（空ならapp.jsで非表示） -->
     <div class="newsbar" aria-label="最新情報">
       <div class="wrap">
         <div class="news-inner">
           <span class="news-label">最新</span>
           <div class="news-track" role="list">
-		  
-		 <!-- 追加例
-            <a class="news-item" role="listitem"
-               href="https://x.com/neko_nekokan" target="_blank" rel="noopener">
-              2025-09-20：FANBOX更新／『DIZZ Yøu XXX IT?』進捗公開
-            </a>
-		-->
-            <!-- 追加例
-            <a class="news-item" role="listitem" href="https://nyanyannya.fanbox.cc/" target="_blank" rel="noopener">
-              2025-09-15：設定資料「奇械（マキナ）」追補
-            </a>
-            -->
-			
+            <!-- 必要なら <a class="news-item">…</a> を追加。無ければ自動で非表示 -->
           </div>
         </div>
       </div>
     </div>
-    <!-- ▲ 最新情報帯ここまで -->
-	
-	
   </header>
 
   <main class="wrap" id="top">
-    
+    <!-- ヒーロー -->
     <section class="hero" aria-label="シリーズの入口">
       <div class="hero-inner">
         <div class="panel">
@@ -539,16 +68,16 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
             <a class="btn" href="#featured">代表曲を聴く</a>
           </div>
         </div>
-       <div class="panel">
-  <figure class="kv">
-    <img src="assets/img/鉛姫シリーズイラスト.jpg" alt="鉛姫シリーズ メインビジュアル（予感子）" loading="eager"/>
-    <figcaption> イラスト: 予感子</figcaption>
-  </figure>
-</div>
+        <div class="panel">
+          <figure class="kv">
+            <img src="assets/img/鉛姫シリーズイラスト.jpg" alt="鉛姫シリーズ メインビジュアル（予感子）" loading="eager"/>
+            <figcaption> イラスト: 予感子</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
-    
+    <!-- 代表曲 -->
     <section class="section" id="featured" aria-label="代表的な動画">
       <h2>代表的な動画</h2>
       <div class="grid cols-3">
@@ -576,15 +105,15 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
       </div>
     </section>
 
-    
+    <!-- ストーリー（元の中間部：タブ＋各パネルを復元） -->
     <section class="section" id="story" aria-label="ストーリーガイド">
       <h2>ストーリー</h2>
       <div class="card">
-<p>
-鉛姫シリーズは、童話「鉛姫」を原点とする群像劇です。  
-色を失った世界で、鉛の姫リーディアが「本当に大切なもの」を探す旅に出るという童話が、壮大なサーガとして再構築されていきます。  
-キャラクターたちは <em>金・愛・規則・幸福・信仰・歌</em> などそれぞれの「大切なもの」を体現し、物語は世界カドワナルカを舞台に章（サーガ）ごとに展開します。
-</p>
+        <p>
+          鉛姫シリーズは、童話「鉛姫」を原点とする群像劇です。<br>
+          色を失った世界で、鉛の姫リーディアが「本当に大切なもの」を探す旅に出るという童話が、壮大なサーガとして再構築されていきます。<br>
+          キャラクターたちは <em>金・愛・規則・幸福・信仰・歌</em> などそれぞれの「大切なもの」を体現し、物語は世界カドワナルカを舞台に章（サーガ）ごとに展開します。
+        </p>
 
         <div class="tabs" role="tablist" aria-label="サーガ切り替え">
           <button class="tab" role="tab" aria-selected="false" data-tab="dizz">DIZZ Yøu XXX IT?（前日譚）</button>
@@ -592,7 +121,9 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
           <button class="tab" role="tab" aria-selected="true" data-tab="lp">色偸るセカイの鉛姫（終章）</button>
           <button class="tab" role="tab" aria-selected="false" data-tab="kc">綺想フヰルム（サイドストーリー）</button>
         </div>
+
         <div id="tab-panels">
+          <!-- 終章 -->
           <div class="panel" data-panel="lp">
             <h3>色偸るセカイの鉛姫（終章）</h3>
             <p>鉛姫リーディアが失われたセカイの色を求める物語。</p>
@@ -601,240 +132,218 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
               <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">色偸るセカイの鉛姫</figcaption>
             </figure>
           </div>
-<div class="panel" data-panel="kado" hidden>
-  <h3>カドワナルカ＝サーガ（本編）</h3>
-  <p>それぞれの大切なものをテーマに個々のキャラクターを中心とした物語群</p>
 
-  <figure class="kv" style="margin-top:8px">
-    <img src="assets/img/saga.png" alt="カドワナルカ＝サーガ イラスト" loading="lazy" style="width:100%; height:auto;"/>
-    <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">
-      カドワナルカ＝サーガ
-    </figcaption>
-  </figure>
+          <!-- 本編 -->
+          <div class="panel" data-panel="kado" hidden>
+            <h3>カドワナルカ＝サーガ（本編）</h3>
+            <p>それぞれの大切なものをテーマに個々のキャラクターを中心とした物語群</p>
 
-  
-  <div class="book-links">
+            <figure class="kv" style="margin-top:8px">
+              <img src="assets/img/saga.png" alt="カドワナルカ＝サーガ イラスト" loading="lazy" style="width:100%; height:auto;"/>
+              <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">
+                カドワナルカ＝サーガ
+              </figcaption>
+            </figure>
 
-    <div class="book-item">
-      <a href="https://club-majesty.booth.pm/items/1515172" target="_blank" rel="noopener">
-        <img src="assets/img/biblio.jpg" alt="フロイライン＝ビブリォチカ" loading="lazy"/>
-        <p>フロイライン＝ビブリォチカ<br>電子書籍版（BOOTH）</p>
-		<p>「ルールは概念のパズルだ。<br>とりわけ目の前の奇械式論理パズルを弄繰り回す彼女にとっては」<br>
-規則を絶対視する審問官<br>『フロイライン＝ビブリォチカ』の物語</p>
-      </a>
-    </div>
+            <div class="book-links">
+              <div class="book-item">
+                <a href="https://club-majesty.booth.pm/items/1515172" target="_blank" rel="noopener">
+                  <img src="assets/img/biblio.jpg" alt="フロイライン＝ビブリォチカ" loading="lazy"/>
+                  <p>フロイライン＝ビブリォチカ<br>電子書籍版（BOOTH）</p>
+                  <p>「ルールは概念のパズルだ。<br>とりわけ目の前の奇械式論理パズルを弄繰り回す彼女にとっては」<br>
+                  規則を絶対視する審問官<br>『フロイライン＝ビブリォチカ』の物語</p>
+                </a>
+              </div>
 
-    <div class="book-item">
-      <a href="https://club-majesty.booth.pm/items/675061" target="_blank" rel="noopener">
-        <img src="assets/img/sectrouge.jpg" alt="シスター＝セクトルージュ" loading="lazy"/>
-        <p>シスター＝セクトルージュ<br>電子書籍版（BOOTH）</p>
-		<p>「セクトルージュは信じない」<br>奇蹟の裏に潜む闇を暴く死神の物語</p>
-      </a>
-    </div>
+              <div class="book-item">
+                <a href="https://club-majesty.booth.pm/items/675061" target="_blank" rel="noopener">
+                  <img src="assets/img/sectrouge.jpg" alt="シスター＝セクトルージュ" loading="lazy"/>
+                  <p>シスター＝セクトルージュ<br>電子書籍版（BOOTH）</p>
+                  <p>「セクトルージュは信じない」<br>奇蹟の裏に潜む闇を暴く死神の物語</p>
+                </a>
+              </div>
 
-    <div class="book-item">
-      <a href="https://club-majesty.booth.pm/items/787487" target="_blank" rel="noopener">
-        <img src="assets/img/funkbeat_dojin.jpg" alt="ドクター＝ファンクビート 電子版" loading="lazy"/>
-        <p>ドクター＝ファンクビート<br>電子書籍版（BOOTH）</p>
-		<p>不幸を治す医者がいた。<br>
-満身創痍の医者だった――</p>
-      </a>
-    </div>
+              <div class="book-item">
+                <a href="https://club-majesty.booth.pm/items/787487" target="_blank" rel="noopener">
+                  <img src="assets/img/funkbeat_dojin.jpg" alt="ドクター＝ファンクビート 電子版" loading="lazy"/>
+                  <p>ドクター＝ファンクビート<br>電子書籍版（BOOTH）</p>
+                  <p>不幸を治す医者がいた。<br>満身創痍の医者だった――</p>
+                </a>
+              </div>
 
-    <div class="book-item">
-      <a href="https://www.kawade.co.jp/np/isbn/9784309027982/" target="_blank" rel="noopener">
-        <img src="assets/img/funkbeat_commercial.jpg" alt="ドクター＝ファンクビート 書籍版" loading="lazy"/>
-        <p>ドクター＝ファンクビート<br>市販書籍版</p>
-      </a>
-    </div>
-
-  </div>
-</div>
-
-
-
-<div class="panel" data-panel="dizz" hidden>
-  <h3>DIZZ Yøu XXX IT?（前日譚）　更新中</h3>
-  <p>魂を燃料とする奇械が文明を支える帝都アークヨルムを舞台に、十八部隊の学生兵と教員たちが怪物〈トーメント〉と陰謀に挑む群像戦記。</p>
-
-  
-  <div class="video">
-    <iframe width="560" height="315"
-      src="https://www.youtube.com/embed/-bt7n34W_Vs"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-
-
-<div class="kv-pair" class="kv-pair">
-  
-  <figure class="kv">
-    <a href="assets/img/dizzy_fileomote2.png" target="_blank">
-      <img src="assets/img/dizzy_fileomote2.png" alt="Dizz 表イラスト"  style="width:100%; height:auto;"/ loading="eager">
-    </a>
-    <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">
-      相反する二人
-    </figcaption>
-  </figure>
-
-  <figure class="kv">
-    <a href="assets/img/DIZZ_キャラ紹介.png" target="_blank">
-      <img src="assets/img/DIZZ_キャラ紹介.png" alt="Dizz キャラクター紹介図" loading="lazy" style="width:100%; height:auto;"/>
-    </a>
-    <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">
-      人物相関図
-    </figcaption>
-  </figure>
-
-  <figure class="kv">
-    <a href="assets/img/dizzy_naka0204.png" target="_blank">
-      <img src="assets/img/dizzy_naka0204.png" alt="Dizz 戦闘シーンイラスト"  style="width:100%; height:auto;"/ loading="eager">
-    </a>
-    <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">
-      帰還
-    </figcaption>
-  </figure>
-</div>
-
-  
-  <div class="fanbox-box dizz-fanbox">
-    <a href="https://nyanyannya.fanbox.cc/posts/9164732" target="_blank" rel="noopener">
-      FANBOXで読む
-    </a>
-  </div>
-
-</div>
-
+              <div class="book-item">
+                <a href="https://www.kawade.co.jp/np/isbn/9784309027982/" target="_blank" rel="noopener">
+                  <img src="assets/img/funkbeat_commercial.jpg" alt="ドクター＝ファンクビート 書籍版" loading="lazy"/>
+                  <p>ドクター＝ファンクビート<br>市販書籍版</p>
+                </a>
+              </div>
+            </div>
           </div>
-<div class="panel" data-panel="kc" hidden>
-  <h3>綺想フヰルム（サイドストーリー）</h3>
-  <p>カドワナルカの市井の人々を描く断章的な物語。</p>
 
-  
-  <div class="grid cols-2" style="margin-top:16px; gap:16px;">
-    
-    <div class="card" style="text-align:center; padding:12px;">
-      <h4>リドル・マーメイド</h4>
-      <p class="muted">クラブ「マーメイド」で働く不死者を描く短編シリーズ。</p>
-      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; background:#000;">
-        <iframe src="https://www.youtube.com/embed/1d-OMxcAuqU" title="リドル・マーメイド 動画" 
-          style="position:absolute; top:0; left:0; width:100%; height:100%;" 
-          frameborder="0" allowfullscreen></iframe>
-      </div>
-      <p style="margin-top:8px;">
-        <a href="https://nyanyannya.fanbox.cc/posts/7648046" target="_blank" class="button">FANBOXで読む　更新中</a>
-      </p>
-    </div>
+          <!-- 前日譚 DIZZ -->
+          <div class="panel" data-panel="dizz" hidden>
+            <h3>DIZZ Yøu XXX IT?（前日譚）　更新中</h3>
+            <p>魂を燃料とする奇械が文明を支える帝都アークヨルムを舞台に、十八部隊の学生兵と教員たちが怪物〈トーメント〉と陰謀に挑む群像戦記。</p>
 
-    
-    <div class="card" style="text-align:center; padding:12px;">
-      <h4>無重力ピエロ</h4>
-      <p class="muted">夢破れた技師と記憶失った奇械人形が空を目指す物語</p>
-      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; background:#000;">
-        <iframe src="https://www.youtube.com/embed/Cwg0azGK_v8" title="無重力ピエロ 動画" 
-          style="position:absolute; top:0; left:0; width:100%; height:100%;" 
-          frameborder="0" allowfullscreen></iframe>
-      </div>
-      <p style="margin-top:8px;">
-        <a href="https://nyanyannya.fanbox.cc/posts/941372" target="_blank" class="button">FANBOXで読む　完結</a>
-      </p>
-    </div>
-  </div>
-  
-</div>
+            <div class="video">
+              <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/-bt7n34W_Vs"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
 
-        </div>
-      </div>
+            <div class="kv-pair">
+              <figure class="kv">
+                <a href="assets/img/dizzy_fileomote2.png" target="_blank">
+                  <img src="assets/img/dizzy_fileomote2.png" alt="Dizz 表イラスト" style="width:100%; height:auto;" loading="eager">
+                </a>
+                <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">
+                  相反する二人
+                </figcaption>
+              </figure>
+
+              <figure class="kv">
+                <a href="assets/img/DIZZ_キャラ紹介.png" target="_blank">
+                  <img src="assets/img/DIZZ_キャラ紹介.png" alt="Dizz キャラクター紹介図" loading="lazy" style="width:100%; height:auto;"/>
+                </a>
+                <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">
+                  人物相関図
+                </figcaption>
+              </figure>
+
+              <figure class="kv">
+                <a href="assets/img/dizzy_naka0204.png" target="_blank">
+                  <img src="assets/img/dizzy_naka0204.png" alt="Dizz 戦闘シーンイラスト" style="width:100%; height:auto;" loading="eager">
+                </a>
+                <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">
+                  帰還
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="fanbox-box dizz-fanbox">
+              <a href="https://nyanyannya.fanbox.cc/posts/9164732" target="_blank" rel="noopener">
+                FANBOXで読む
+              </a>
+            </div>
+          </div>
+
+          <!-- サイドストーリー -->
+          <div class="panel" data-panel="kc" hidden>
+            <h3>綺想フヰルム（サイドストーリー）</h3>
+            <p>カドワナルカの市井の人々を描く断章的な物語。</p>
+
+            <div class="grid cols-2" style="margin-top:16px; gap:16px;">
+              <div class="card" style="text-align:center; padding:12px;">
+                <h4>リドル・マーメイド</h4>
+                <p class="muted">クラブ「マーメイド」で働く不死者を描く短編シリーズ。</p>
+                <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; background:#000;">
+                  <iframe src="https://www.youtube.com/embed/1d-OMxcAuqU" title="リドル・マーメイド 動画"
+                    style="position:absolute; top:0; left:0; width:100%; height:100%;"
+                    frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p style="margin-top:8px;">
+                  <a href="https://nyanyannya.fanbox.cc/posts/7648046" target="_blank" class="button">FANBOXで読む　更新中</a>
+                </p>
+              </div>
+
+              <div class="card" style="text-align:center; padding:12px;">
+                <h4>無重力ピエロ</h4>
+                <p class="muted">夢破れた技師と記憶失った奇械人形が空を目指す物語</p>
+                <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; background:#000;">
+                  <iframe src="https://www.youtube.com/embed/Cwg0azGK_v8" title="無重力ピエロ 動画"
+                    style="position:absolute; top:0; left:0; width:100%; height:100%;"
+                    frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p style="margin-top:8px;">
+                  <a href="https://nyanyannya.fanbox.cc/posts/941372" target="_blank" class="button">FANBOXで読む　完結</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> <!-- /#tab-panels -->
+      </div> <!-- /.card -->
     </section>
 
-
-<section class="section" id="characters" aria-label="キャラクター">
-  <h2>メインキャラクター</h2>
-  <div class="card" style="margin-bottom:12px">
-    <strong>6つの大切なもの：</strong> 金 / 愛 / 規則 / 幸福 / 信仰 / 歌
-  </div>
-
-  <div class="grid cols-3">
-    
-    <article class="card char-card">
-      <div class="avatar"><img src="assets/img/rouge_split_0.png" alt="リーディア"></div>
-      <div>
-        <h3 style="margin:0 0 6px">鉛姫リーディア <span class="badge">大切なもの：???</span></h3>
-        <p class="meta">VOCAL: 鏡音リン / 代表曲：色偸る世界の鉛姫</p>
-        <p>色を知らない鉛の姫。セカイの色を取り戻そうとするが……。</p>
+    <!-- キャラクター -->
+    <section class="section" id="characters" aria-label="キャラクター">
+      <h2>メインキャラクター</h2>
+      <div class="card" style="margin-bottom:12px">
+        <strong>6つの大切なもの：</strong> 金 / 愛 / 規則 / 幸福 / 信仰 / 歌
       </div>
-    </article>
 
-    
-    <article class="card char-card">
-      <div class="avatar"><img src="assets/img/split_1.png" alt="キャッシュ"></div>
-      <div>
-        <h3 style="margin:0 0 6px">キャッシュ <span class="badge">大切なもの：お金</span></h3>
-        <p class="meta">VOCAL: 鏡音レン / 代表曲：クラブ＝マジェスティ</p>
-        <p>商会（ウェアハウス）きっての優雅で皮肉屋な取り立て屋。</p>
+      <div class="grid cols-3">
+        <article class="card char-card">
+          <div class="avatar"><img src="assets/img/rouge_split_0.png" alt="リーディア"></div>
+          <div>
+            <h3 style="margin:0 0 6px">鉛姫リーディア <span class="badge">大切なもの：???</span></h3>
+            <p class="meta">VOCAL: 鏡音リン / 代表曲：色偸る世界の鉛姫</p>
+            <p>色を知らない鉛の姫。セカイの色を取り戻そうとするが……。</p>
+          </div>
+        </article>
+
+        <article class="card char-card">
+          <div class="avatar"><img src="assets/img/split_1.png" alt="キャッシュ"></div>
+          <div>
+            <h3 style="margin:0 0 6px">キャッシュ <span class="badge">大切なもの：お金</span></h3>
+            <p class="meta">VOCAL: 鏡音レン / 代表曲：クラブ＝マジェスティ</p>
+            <p>商会（ウェアハウス）きっての優雅で皮肉屋な取り立て屋。</p>
+          </div>
+        </article>
+
+        <article class="card char-card">
+          <div class="avatar"><img src="assets/img/split_2.png" alt="フィロ"></div>
+          <div>
+            <h3 style="margin:0 0 6px">フィロ <span class="badge">大切なもの：愛</span></h3>
+            <p class="meta">VOCAL: 鏡音リン / 代表曲：エンプレス＝ディスコ</p>
+            <p>嘘と残忍さの裏側に愛と弱さを背負う皇女。</p>
+          </div>
+        </article>
+
+        <article class="card char-card">
+          <div class="avatar"><img src="assets/img/split_3.png" alt="チキータ"></div>
+          <div>
+            <h3 style="margin:0 0 6px">チキータ <span class="badge">大切なもの：規則</span></h3>
+            <p class="meta">VOCAL: MEIKO / 代表曲：フロイライン＝ビブリォチカ</p>
+            <p>誓いの書に秘密を携えて規則を護る審問官。</p>
+          </div>
+        </article>
+
+        <article class="card char-card">
+          <div class="avatar"><img src="assets/img/split_4.png" alt="ファン"></div>
+          <div>
+            <h3 style="margin:0 0 6px">ファン <span class="badge">大切なもの：幸福</span></h3>
+            <p class="meta">VOCAL: KAITO / 代表曲：ドクター＝ファンクビート</p>
+            <p>不幸という病を治す自称大天才。</p>
+          </div>
+        </article>
+
+        <article class="card char-card">
+          <div class="avatar"><img src="assets/img/split_5.png" alt="ルージュ"></div>
+          <div>
+            <h3 style="margin:0 0 6px">ルージュ <span class="badge">大切なもの：信仰</span></h3>
+            <p class="meta">VOCAL: 巡音ルカ / 代表曲：シスター＝セクトルージュ</p>
+            <p>修道女の衣に身を隠す、魂を狩る元死神。</p>
+          </div>
+        </article>
+
+        <article class="card char-card">
+          <div class="avatar"><img src="assets/img/split_6.png" alt="ライカ"></div>
+          <div>
+            <h3 style="margin:0 0 6px">ライカ <span class="badge">大切なもの：歌</span></h3>
+            <p class="meta">VOCAL: 初音ミク / 代表曲：シング＝ライカマジク</p>
+            <p>西の森で歌う元革命の歌姫。</p>
+          </div>
+        </article>
       </div>
-    </article>
 
-    
-    <article class="card char-card">
-      <div class="avatar"><img src="assets/img/split_2.png" alt="フィロ"></div>
-      <div>
-        <h3 style="margin:0 0 6px">フィロ <span class="badge">大切なもの：愛</span></h3>
-        <p class="meta">VOCAL: 鏡音リン / 代表曲：エンプレス＝ディスコ</p>
-        <p>嘘と残忍さの裏側に愛と弱さを背負う皇女。</p>
-      </div>
-    </article>
+      <p class="meta" style="margin-top:8px">※ネタバレ配慮のため一部表現を簡略化しています。</p>
+    </section>
 
-    
-    <article class="card char-card">
-      <div class="avatar"><img src="assets/img/split_3.png" alt="チキータ"></div>
-      <div>
-        <h3 style="margin:0 0 6px">チキータ <span class="badge">大切なもの：規則</span></h3>
-        <p class="meta">VOCAL: MEIKO / 代表曲：フロイライン＝ビブリォチカ</p>
-        <p>誓いの書に秘密を携えて規則を護る審問官。</p>
-      </div>
-    </article>
-
-    
-    <article class="card char-card">
-      <div class="avatar"><img src="assets/img/split_4.png" alt="ファン"></div>
-      <div>
-        <h3 style="margin:0 0 6px">ファン <span class="badge">大切なもの：幸福</span></h3>
-        <p class="meta">VOCAL: KAITO / 代表曲：ドクター＝ファンクビート</p>
-        <p>不幸という病を治す自称大天才。</p>
-      </div>
-    </article>
-
-    
-    <article class="card char-card">
-      <div class="avatar"><img src="assets/img/split_5.png" alt="ルージュ"></div>
-      <div>
-        <h3 style="margin:0 0 6px">ルージュ <span class="badge">大切なもの：信仰</span></h3>
-        <p class="meta">VOCAL: 巡音ルカ / 代表曲：シスター＝セクトルージュ</p>
-        <p>修道女の衣に身を隠す、魂を狩る元死神</p>
-      </div>
-    </article>
-
-    
-    <article class="card char-card">
-      <div class="avatar"><img src="assets/img/split_6.png" alt="ライカ"></div>
-      <div>
-        <h3 style="margin:0 0 6px">ライカ <span class="badge">大切なもの：歌</span></h3>
-        <p class="meta">VOCAL: 初音ミク / 代表曲：シング＝ライカマジク</p>
-        <p>西の森で歌う元革命の歌姫。</p>
-      </div>
-    </article>
-  </div>
-
-  <p class="meta" style="margin-top:8px">※ネタバレ配慮のため一部表現を簡略化しています。</p>
-</section>
-
-
-    
+    <!-- 時系列 -->
     <section class="section" id="timeline" aria-label="時系列">
       <h2>カドワナルカ時系列</h2>
       <div class="card">
@@ -843,12 +352,12 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
           <li class="tl-item"><strong>ノースエンド騒乱(第二次アークヨルム革命)</strong> 　楽曲：DIZZ Yøu XXX IT?</li>
           <li class="tl-item"><strong>カドワナルカ＝サーガ</strong>　楽曲：ドクター＝ファンクビート 他</li>
           <li class="tl-item"><strong>色偸るセカイの鉛姫</strong>　楽曲：ディサイド！ 他</li>
-          <li class="tl-item"><strong>エピローグ</strong> </li>
+          <li class="tl-item"><strong>エピローグ</strong></li>
         </ol>
       </div>
     </section>
 
-    
+    <!-- 用語 -->
     <section class="section" id="glossary" aria-label="用語ミニ辞典">
       <h2>用語ミニ辞典</h2>
       <div class="grid cols-2">
@@ -861,41 +370,18 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
       </div>
     </section>
 
-
-<section class="section" id="fanbox" aria-label="FANBOX最新">
-  <h2>FANBOX ピックアップ記事</h2>
-  <p class="muted">制作記・設定資料・先行公開など。</p>
-  <div class="slider" data-slider>
-    <div class="track" id="fanboxTrack" aria-live="polite">
-      
-      <article class="card">
-        <div class="body">
-          <h3><a href="https://nyanyannya.fanbox.cc/posts/9210030" target="_blank" rel="noopener">設定資料：奇械（マキナ）について</a></h3>
-          <p>物語の根幹にある奇械（マキナ）の一覧資料</p>
-          <p class="meta">2025.01.14</p>
+    <!-- FANBOX ピックアップ（日付なし／JS注入。trackは空） -->
+    <section class="section" id="fanbox" aria-label="FANBOX最新">
+      <h2>FANBOX ピックアップ記事</h2>
+      <p class="muted">制作記・設定資料・先行公開など。</p>
+      <div class="slider" data-slider>
+        <div class="track" id="fanboxTrack" aria-live="polite">
+          <!-- fanbox.js がアクセス毎に3件を注入（タイトル＋抜粋のみ／日付なし） -->
         </div>
-      </article>
+      </div>
+    </section>
 
-      <article class="card">
-        <div class="body">
-          <h3><a href="https://nyanyannya.fanbox.cc/posts/1281051" target="_blank" rel="noopener">小説：ノエル・デ・フィガロ　「少年とプリエスト」</a></h3>
-          <p>ノエル＝バイテルの少年時代を描く短編</p>
-          <p class="meta">2020.08.04</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="body">
-          <h3><a href="https://nyanyannya.fanbox.cc/posts/2112083" target="_blank" rel="noopener">小説：クラブ＝マジェスティ『シリング＝ショット』【01】（旧約版）</a></h3>
-          <p>クラブ＝マジェスティのアクション長編</p>
-          <p class="meta">2021.04.10</p>
-        </div>
-      </article>
-
-    </div>
-    </div>
-  </div>
-</section>
+    <!-- 公式リンク -->
     <section class="section" id="links" aria-label="公式リンク">
       <h2>公式/関連リンク</h2>
       <div class="grid cols-2">
@@ -919,12 +405,12 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
           <p class="muted">最新情報や告知はこちらから。</p>
           <p><a href="https://x.com/neko_nekokan" target="_blank" rel="noopener">nyanyannya Xアカウントへ</a></p>
         </div>
-		<div class="card">
+        <div class="card">
           <h3 style="margin-top:0">KARENT（ディスコグラフィー）</h3>
           <p class="muted">リリース楽曲一覧、音楽配信はこちらから</p>
           <p><a href="https://karent.jp/artist/pp000651" target="_blank" rel="noopener">KARENTへ</a></p>
         </div>
-		<div class="card">
+        <div class="card">
           <h3 style="margin-top:0">ピアプロ（インスト配布等）</h3>
           <p class="muted">一部楽曲のインスト音源や歌詞を配付</p>
           <p><a href="https://piapro.jp/nyanyannya_nekokan" target="_blank" rel="noopener">ピアプロへ</a></p>
@@ -942,50 +428,8 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
     </div>
   </footer>
 
-<script>
-  // 年表示
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
-
-<script>
-document.querySelectorAll('.tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    const target = tab.getAttribute('data-tab');
-    document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected','false'));
-    tab.setAttribute('aria-selected','true');
-    document.querySelectorAll('.panel[data-panel]').forEach(panel => {
-      panel.hidden = panel.getAttribute('data-panel') !== target;
-    });
-  });
-});
-(function(){
-  const active = document.querySelector('.tab[aria-selected="true"]');
-  if(active){
-    const target = active.getAttribute('data-tab');
-    document.querySelectorAll('.panel[data-panel]').forEach(p=>{
-      p.hidden = p.getAttribute('data-panel') !== target;
-    });
-  }
-})();
-</script>
-
-<script>
-(function(){
-  const bar = document.querySelector('.newsbar');
-  const track = bar?.querySelector('.news-track');
-  if(!bar || !track) return;
-
-  // 中身がある .news-item （空白だけは除外）を数える
-  const items = Array.from(track.querySelectorAll('.news-item'))
-    .filter(a => (a.textContent || '').trim().length > 0);
-
-  // 1件も無ければ非表示
-  if(items.length === 0){
-    bar.hidden = true;
-  }
-})();
-</script>
-
+  <!-- 外部JS（順序維持） -->
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/fanbox.js" defer></script>
 </body>
 </html>
