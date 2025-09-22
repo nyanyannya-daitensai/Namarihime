@@ -35,7 +35,26 @@ const FANBOX_POOL = [
     url: "https://nyanyannya.fanbox.cc/posts/469142",
     excerpt: "十八部隊の詳細設定資料",
     image: null
-  }
+  },
+    {
+    title: " 音源配布：吹奏楽『色偸るセカイの鉛姫』",
+    url: "https://nyanyannya.fanbox.cc/posts/9003268",
+    excerpt: "吹奏楽に編曲した「色偸るセカイの鉛姫」の音源配布",
+    image: null
+  },
+   {
+    title: " 配信アーカイブ：１２月８日 公式配信のアーカイブ",
+    url: "  https://nyanyannya.fanbox.cc/posts/9003268",
+    excerpt: "世界観、設定について説明した配信のアーカイブ",
+    image: null
+  },
+   {
+    title: " 音源配布　カドワナルカ＝ギャラルホルン",
+    url: "  https://nyanyannya.fanbox.cc/posts/7654358",
+    excerpt: "過去にリリースした十八部隊関連アルバムの音源配布",
+    image: null
+  },
+
   // --- 必要に応じて追加 ---
   // { title:"...", url:"...", excerpt:"...", image:"https://..." },
 ];
