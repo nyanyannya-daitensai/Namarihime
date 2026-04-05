@@ -30,6 +30,7 @@
         <a href="#characters">キャラクター</a>
         <a href="#timeline">時系列</a>
         <a href="#glossary">用語</a>
+        <a href="#shindan">診断</a>
         <a href="#links">リンク</a>
       </nav>
     </div>
@@ -352,6 +353,66 @@
       <p class="meta" style="margin-top:8px">※ネタバレ配慮のため一部表現を簡略化しています。</p>
     </section>
 
+    <!-- 診断 -->
+    <section class="section" id="shindan" aria-label="キャラ診断">
+      <h2>あなたの「大切なもの」診断</h2>
+      <div class="shindan-container">
+        <!-- 背景装飾 -->
+        <div class="shindan-bg-decor" aria-hidden="true"></div>
+
+        <div class="shindan-body" id="shindanBody">
+          <!-- イントロ -->
+          <div class="shindan-phase" id="shindanIntro">
+            <div class="shindan-series-label">鉛姫シリーズ</div>
+            <h3 class="shindan-title">あなたの<br>「大切なもの」診断</h3>
+            <div class="shindan-divider"></div>
+            <p class="shindan-lead">
+              色を失った世界「カドワナルカ」――<br>
+              6人のキャラクターは、それぞれ違う<br>
+              「大切なもの」を胸に抱いている。<br><br>
+              5つの問いに答えると、<br>
+              あなたに最も近いキャラクターが分かります。
+            </p>
+            <button class="shindan-start-btn" id="shindanStart">はじめる</button>
+          </div>
+
+          <!-- 質問 -->
+          <div class="shindan-phase" id="shindanQuestion" hidden>
+            <div class="shindan-progress" id="shindanProgress"></div>
+            <div class="shindan-q-label" id="shindanQLabel"></div>
+            <p class="shindan-q-text" id="shindanQText"></p>
+            <div class="shindan-choices" id="shindanChoices"></div>
+          </div>
+
+          <!-- 結果 -->
+          <div class="shindan-phase" id="shindanResultPhase" hidden>
+            <div class="shindan-result-label">YOUR RESULT</div>
+            <div class="shindan-result-orb" id="shindanOrb"></div>
+            <h3 class="shindan-result-name" id="shindanCharName"></h3>
+            <div>
+              <span class="shindan-result-tag" id="shindanTag"></span>
+            </div>
+            <div class="shindan-result-divider" id="shindanResultDivider"></div>
+            <p class="shindan-result-desc" id="shindanDesc"></p>
+            <p class="shindan-result-vocal" id="shindanVocal"></p>
+            <p class="shindan-result-song" id="shindanSongName"></p>
+            <div class="shindan-actions">
+              <a class="shindan-share-btn" id="shindanShare" href="#" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                結果をシェアする
+              </a>
+              <button class="shindan-retry-btn" id="shindanRetry">もう一度やる</button>
+            </div>
+            <div class="shindan-result-footer">
+              <p>鉛姫シリーズの世界をもっと知りたい方は<br>
+                <a id="shindanGuideLink" href="#top">公式ガイド →</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 時系列 -->
     <section class="section" id="timeline" aria-label="時系列">
       <h2>カドワナルカ時系列</h2>
@@ -424,6 +485,15 @@
           <p class="muted">一部楽曲のインスト音源や歌詞を配付</p>
           <p><a href="https://piapro.jp/nyanyannya_nekokan" target="_blank" rel="noopener">ピアプロへ</a></p>
         </div>
+      </div>
+    </section>
+
+    <!-- 二次創作ガイドライン -->
+    <section class="section" id="fanwork" aria-label="二次創作について">
+      <h2>二次創作について</h2>
+      <div class="card">
+        <p>鉛姫シリーズの二次創作（イラスト、小説、動画、音楽アレンジ等）は歓迎しています。個人の非営利利用の範囲でご自由にお楽しみください。</p>
+        <p>素材については<a href="https://club-majesty.booth.pm/items/3154475" target="_blank" rel="noopener">BOOTHのオフボーカル音源</a>をご活用ください。</p>
       </div>
     </section>
   </main>
