@@ -44,10 +44,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,13,18,.85);backdrop-f
 .quickstart-links a{font-size:14px;font-weight:600;color:var(--brand)}
 .quickstart-links a:hover{text-decoration:underline}
 
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-.btn{appearance:none;border:1px solid var(--line);background:#0e121a;color:var(--text);padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:700}
-.btn.primary{outline:2px solid var(--brand)}
-
 .slider{position:relative}
 .slider .track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/3);gap:16px;overflow:hidden;scroll-behavior:smooth}
 .slider .item{display:flex;flex-direction:column;gap:8px}
