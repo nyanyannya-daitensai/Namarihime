@@ -44,6 +44,17 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,13,18,.85);backdrop-f
 .quickstart-links a{font-size:14px;font-weight:600;color:var(--brand)}
 .quickstart-links a:hover{text-decoration:underline}
 
+.story-figure{margin:12px auto 0!important}
+.story-figure--wide{width:min(100%,760px)}
+.story-figure--square{width:min(100%,640px)}
+.story-books{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;margin-top:20px;align-items:start}
+.story-books .book-item{width:auto;max-width:220px;margin:0 auto;text-align:center}
+.story-books .book-item a{display:flex;flex-direction:column;height:100%;color:inherit;text-decoration:none}
+.story-books .book-item a:hover img{transform:translateY(-2px)}
+.story-books .book-item img{width:100%;aspect-ratio:7/10;object-fit:cover;border-radius:10px;border:1px solid #333;background:#0c0f16;transition:transform .2s ease}
+.story-books .book-item p{margin:8px 0 0;font-size:.85rem;color:#fff;line-height:1.5}
+.story-books .book-item p:first-of-type{font-weight:700}
+
 .slider{position:relative}
 .slider .track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 32px)/3);gap:16px;overflow:hidden;scroll-behavior:smooth}
 .slider .item{display:flex;flex-direction:column;gap:8px}
@@ -114,12 +125,6 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
 .panel[data-panel="dizz"] .video{ text-align:center; margin-top:12px; }
 .panel[data-panel="dizz"] .video iframe{ display:inline-block; }
 
-/* 本編リンク群 */
-.panel[data-panel="kado"] .book-links{ display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:20px; }
-.panel[data-panel="kado"] .book-item{ width:160px; text-align:center; }
-.panel[data-panel="kado"] .book-item img{ width:100%; height:auto; border-radius:6px; border:1px solid #333; }
-.panel[data-panel="kado"] .book-item p{ margin-top:6px; font-size:.85rem; color:#fff; line-height:1.4; }
-
 /* スライダー */
 .slider{ position:relative; overflow:hidden; }
 .slider .track{ display:flex; gap:16px; transition:transform .3s ease; }
@@ -130,6 +135,9 @@ body > header, body > main, body > footer { position: relative; z-index: 1; }
 .slider .card p{ font-size:.875rem; color:#666; }
 
 @media (max-width:640px){
+  .story-figure--wide,.story-figure--square{width:100%}
+  .story-books{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .story-books .book-item{max-width:none}
   #fanbox .slider .track{ display:block; overflow:visible; scroll-snap-type:none; }
   #fanbox .slider .card{ flex:1 1 auto; width:100%; margin-bottom:12px; }
   #fanbox .slider::before,#fanbox .slider::after{ display:none; }
