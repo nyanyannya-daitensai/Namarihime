@@ -3,509 +3,542 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>鉛姫シリーズ 公式ガイド</title>
-  <meta name="description" content="ボカロP nyanyannya による『鉛姫シリーズ』の入門・総合ガイド。ストーリー、キャラクター、時系列、最新情報、動画・小説・FANBOXへの導線を網羅。" />
-  <meta name="theme-color" content="#0b0d12" />
+  <title>鉛姫シリーズ 公式サイト</title>
+  <meta name="description" content="ボカロP nyanyannya による『鉛姫シリーズ』公式サイト。色を失った世界カドワナルカを巡る群像叙事詩。楽曲・物語・キャラクター・診断、そしてこの世界の続きを支えるFANBOXへ。" />
+  <meta name="theme-color" content="#0a0b0e" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="鉛姫シリーズ 公式サイト" />
+  <meta property="og:description" content="色を失った世界を巡る群像叙事詩。6つの大切なものをめぐる、楽曲と物語のサーガ。" />
+  <meta property="og:url" content="https://nyanyannya-daitensai.github.io/Namarihime/" />
+  <meta property="og:image" content="https://nyanyannya-daitensai.github.io/Namarihime/assets/img/hero-main.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="鉛姫シリーズ 公式サイト" />
+  <meta name="twitter:description" content="色を失った世界を巡る群像叙事詩。6つの大切なものをめぐる、楽曲と物語のサーガ。" />
+  <meta name="twitter:image" content="https://nyanyannya-daitensai.github.io/Namarihime/assets/img/hero-main.webp" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/img/hero-main.webp" type="image/webp" />
-  <link rel="preload" as="image" href="assets/bg/bg.png" />
-  <!-- 外部CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- 背景ループ -->
-  <div class="bg-loop" aria-hidden="true"></div>
 
   <header>
     <div class="wrap nav">
-      <div class="logo" aria-label="鉛姫シリーズ">
-        <span class="logo-dot"></span>鉛姫シリーズ ガイド
-      </div>
+      <a href="#top" class="brand" aria-label="鉛姫シリーズ">
+        <span class="seal" aria-hidden="true"></span>鉛姫シリーズ <small>Lead Princess</small>
+      </a>
       <nav class="menu" aria-label="主要メニュー">
-        <a href="#top" class="active">トップ</a>
         <a href="#featured">代表曲</a>
-        <a href="#story">ストーリー</a>
+        <a href="#story">物語</a>
         <a href="#characters">キャラクター</a>
-        <a href="#timeline">時系列</a>
-        <a href="#glossary">用語</a>
         <a href="#shindan">診断</a>
-        <a href="#links">リンク</a>
+        <a href="#support">応援</a>
+        <a href="#fanwork">二次創作</a>
       </nav>
     </div>
-
-    <!-- 最新情報帯（空ならapp.jsで非表示） -->
+    <!-- 最新情報帯（空ならapp.jsで自動非表示。更新情報をここに追記できます） -->
     <div class="newsbar" aria-label="最新情報">
-      <div class="wrap">
-        <div class="news-inner">
-          <span class="news-label">最新</span>
-          <div class="news-track" role="list">
-            <!-- 必要なら <a class="news-item">…</a> を追加。無ければ自動で非表示 -->
-          </div>
+      <div class="wrap news-inner">
+        <span class="news-label">News</span>
+        <div class="news-track" role="list">
+          <!-- 例: <a class="news-item" href="...">2026.xx.xx 新曲公開</a> -->
         </div>
       </div>
     </div>
   </header>
 
-  <main class="wrap" id="top">
-    <!-- ヒーロー -->
+  <main id="top">
+
+    <!-- ============ ヒーロー（色の約束） ============ -->
     <section class="hero" aria-label="シリーズの入口">
+      <div class="hero-art" aria-hidden="true">
+        <img src="assets/img/hero-main.webp" alt="" width="1600" height="1062" fetchpriority="high" decoding="async" />
+      </div>
       <div class="hero-inner">
-        <div class="panel">
-          <h1>色を失った世界を巡る叙事詩 — 鉛姫シリーズ</h1>
-          <p class="lead">nyanyannya（大天才P）によるボカロ発の物語音楽。<br>初めての方はまずこの動画から。</p>
-          <div class="yt-wrap" aria-label="入口動画">
-            <iframe
-              src="https://www.youtube.com/embed/IFwVUC-dgyo"
-              title="シリーズ紹介/入口動画"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              loading="lazy" allowfullscreen></iframe>
-          </div>
-          <div class="quickstart">
-            <h2 class="quickstart-title">3分で分かる鉛姫シリーズ</h2>
-            <p class="quickstart-body">色を失った世界「カドワナルカ」。鉛の姫リーディアが、世界に色を取り戻すために旅に出る。彼女が出会うのは、お金・愛・規則・幸福・信仰・歌――それぞれ違う「大切なもの」を持つ6人。ボカロ楽曲と小説で綴る、群像叙事詩。</p>
-            <div class="quickstart-links">
-              <a href="#featured">👉 曲から入る</a>
-              <a href="#characters">👉 キャラから入る</a>
-              <a href="#story">👉 物語から入る</a>
-            </div>
+        <div class="hero-copy">
+          <h1>鉛姫シリーズ</h1>
+          <p class="lead">ボカロP・<strong>nyanyannya</strong> が十年以上制作している音楽と小説のシリーズです。<br>楽曲と小説がひとつの長い物語でつながっています。</p>
+          <div class="hero-actions">
+            <a href="#featured" class="btn btn-ghost btn-arrow">まず曲を聴いてみる</a>
+            <a href="#shindan" class="link-quiet">キャラ診断をやってみる</a>
           </div>
         </div>
-        <div class="panel">
-          <figure class="kv">
-            <img src="assets/img/hero-main.webp" alt="鉛姫シリーズ メインビジュアル（予感子）" width="1600" height="1062" loading="eager" fetchpriority="high" decoding="async"/>
-            <figcaption> イラスト: 予感子</figcaption>
-          </figure>
+      </div>
+      <p class="hero-credit">イラスト: 予感子</p>
+    </section>
+
+    <!-- ============ オンボーディング（入口動画 + 3分要約） ============ -->
+    <section class="section" aria-label="はじめての方へ" style="padding-top:0">
+      <div class="wrap onboard">
+        <div class="yt-wrap" data-reveal aria-label="入口動画">
+          <iframe src="https://www.youtube.com/embed/IFwVUC-dgyo" title="シリーズ紹介/入口動画"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="primer" data-reveal data-reveal-delay="1">
+          <h2>はじめての方へ</h2>
+          <p>色を失った世界「カドワナルカ」。鉛の姫リーディアがその色を取り戻すために旅に出ます。出会うのは<em>金・愛・規則・幸福・信仰・歌</em>——それぞれ違う「大切なもの」を抱えた6人。ボカロ楽曲と小説から広がっていく物語です。</p>
         </div>
       </div>
     </section>
 
-    <!-- 代表曲 -->
+    <!-- ============ 代表曲 ============ -->
     <section class="section" id="featured" aria-label="代表的な動画">
-      <h2>代表的な動画</h2>
-      <div class="grid cols-3">
-        <article class="card">
-          <h3 style="margin:0 0 8px">ドクター＝ファンクビート</h3>
-          <div class="yt-wrap" aria-label="ドクター＝ファンクビート">
-            <iframe src="https://www.youtube.com/embed/CPxxurEcGTw" title="Doctor=Funk Beat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
-          </div>
-          <p class="meta">VOCAL: KAITO / キャラクター: ファン</p>
-        </article>
-        <article class="card">
-          <h3 style="margin:0 0 8px">エル・タンゴ・エゴイスタ</h3>
-          <div class="yt-wrap" aria-label="エル・タンゴ・エゴイスタ">
-            <iframe src="https://www.youtube.com/embed/2zilNT7hgFc" title="El Tango Egoista" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
-          </div>
-          <p class="meta">VOCAL: KAITO＆巡音ルカ / キャラクター: ブルーノート＆ルージュ </p>
-        </article>
-        <article class="card">
-          <h3 style="margin:0 0 8px">フロイライン＝ビブリォチカ</h3>
-          <div class="yt-wrap" aria-label="フロイライン＝ビブリォチカ">
-            <iframe src="https://www.youtube.com/embed/t4gP6cC55p0" title="Fräulein=Biblioteka" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
-          </div>
-          <p class="meta">VOCAL: MEIKO / キャラクター: チキータ</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ストーリー（元の中間部：タブ＋各パネルを復元） -->
-    <section class="section" id="story" aria-label="ストーリーガイド">
-      <h2>ストーリー</h2>
-      <div class="card">
-        <p>
-          鉛姫シリーズは、童話「鉛姫」を原点とする群像劇です。<br>
-          色を失った世界で、鉛の姫リーディアが「本当に大切なもの」を探す旅に出るという童話が、壮大なサーガとして再構築されていきます。<br>
-          キャラクターたちは <em>金・愛・規則・幸福・信仰・歌</em> などそれぞれの「大切なもの」を体現し、物語は世界カドワナルカを舞台に章（サーガ）ごとに展開します。
-        </p>
-
-        <div class="tabs" role="tablist" aria-label="サーガ切り替え">
-          <button class="tab" role="tab" aria-selected="false" data-tab="dizz">DIZZ Yøu XXX IT?（前日譚）</button>
-          <button class="tab" role="tab" aria-selected="true" data-tab="kado">カドワナルカ・サーガ（本編）</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="lp">色偸るセカイの鉛姫（終章）</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="kc">綺想フヰルム（サイドストーリー）</button>
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <h2>代表曲</h2>
+          <p>まずは何曲か聴いてみてください。気になった曲があればその物語も読めます。</p>
         </div>
+        <div class="grid cols-3">
 
-        <div id="tab-panels">
-          <!-- 終章 -->
-          <div class="panel" data-panel="lp" hidden>
-            <h3>色偸るセカイの鉛姫（終章）</h3>
-            <p>鉛姫リーディアが失われたセカイの色を求める物語。</p>
-            <figure class="kv story-figure story-figure--wide">
-              <img src="assets/img/story-lp.webp" alt="色偸るセカイの鉛姫 イラスト" width="1000" height="724" loading="lazy" decoding="async"/>
-              <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">色偸るセカイの鉛姫</figcaption>
-            </figure>
-          </div>
-
-          <!-- 本編 -->
-          <div class="panel" data-panel="kado">
-            <h3>カドワナルカ＝サーガ（本編）</h3>
-            <p>それぞれの大切なものをテーマに個々のキャラクターを中心とした物語群</p>
-
-            <figure class="kv story-figure story-figure--square">
-              <img src="assets/img/story-kado.webp" alt="カドワナルカ＝サーガ イラスト" width="1200" height="1200" loading="lazy" decoding="async"/>
-              <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">
-                カドワナルカ＝サーガ
-              </figcaption>
-            </figure>
-
-            <div class="book-links story-books">
-              <div class="book-item">
-                <a href="https://club-majesty.booth.pm/items/1515172" target="_blank" rel="noopener">
-                  <img src="assets/img/book-biblio.webp" alt="フロイライン＝ビブリォチカ" width="500" height="701" loading="lazy" decoding="async"/>
-                  <p>フロイライン＝ビブリォチカ<br>電子書籍版（BOOTH）</p>
-                  <p>「ルールは概念のパズルだ。<br>とりわけ目の前の奇械式論理パズルを弄繰り回す彼女にとっては」<br>
-                  規則を絶対視する審問官<br>『フロイライン＝ビブリォチカ』の物語</p>
-                </a>
-              </div>
-
-              <div class="book-item">
-                <a href="https://club-majesty.booth.pm/items/675061" target="_blank" rel="noopener">
-                  <img src="assets/img/book-sectrouge.webp" alt="シスター＝セクトルージュ" width="500" height="703" loading="lazy" decoding="async"/>
-                  <p>シスター＝セクトルージュ<br>電子書籍版（BOOTH）</p>
-                  <p>「セクトルージュは信じない」<br>奇蹟の裏に潜む闇を暴く死神の物語</p>
-                </a>
-              </div>
-
-              <div class="book-item">
-                <a href="https://club-majesty.booth.pm/items/787487" target="_blank" rel="noopener">
-                  <img src="assets/img/book-funkbeat-dojin.webp" alt="ドクター＝ファンクビート 電子版" width="500" height="716" loading="lazy" decoding="async"/>
-                  <p>ドクター＝ファンクビート<br>電子書籍版（BOOTH）</p>
-                  <p>不幸を治す医者がいた。<br>満身創痍の医者だった――</p>
-                </a>
-              </div>
-
-              <div class="book-item">
-                <a href="https://www.kawade.co.jp/np/isbn/9784309027982/" target="_blank" rel="noopener">
-                  <img src="assets/img/book-funkbeat-commercial.webp" alt="ドクター＝ファンクビート 書籍版" width="500" height="734" loading="lazy" decoding="async"/>
-                  <p>ドクター＝ファンクビート<br>市販書籍版</p>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 前日譚 DIZZ -->
-          <div class="panel" data-panel="dizz" hidden>
-            <h3>DIZZ Yøu XXX IT?（前日譚）　更新中</h3>
-            <p>魂を燃料とする奇械が文明を支える帝都アークヨルムを舞台に、十八部隊の学生兵と教員たちが怪物〈トーメント〉と陰謀に挑む群像戦記。</p>
-
-            <div class="video">
-              <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/-bt7n34W_Vs"
-                title="YouTube video player"
-                frameborder="0"
+          <article class="song-card" data-reveal>
+            <h3>ドクター＝ファンクビート</h3>
+            <div class="yt-wrap" aria-label="ドクター＝ファンクビート">
+              <iframe src="https://www.youtube.com/embed/CPxxurEcGTw" title="Doctor=Funk Beat"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
+                referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
             </div>
-
-            <div class="kv-pair">
-              <figure class="kv">
-                <a href="assets/img/dizzy_fileomote2.png" target="_blank">
-                  <img src="assets/img/dizz-duo.webp" alt="Dizz 表イラスト" width="508" height="720" loading="lazy" decoding="async">
-                </a>
-                <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">
-                  相反する二人
-                </figcaption>
-              </figure>
-
-              <figure class="kv">
-                <a href="assets/img/DIZZ_キャラ紹介.png" target="_blank">
-                  <img src="assets/img/dizz-chart.webp" alt="Dizz キャラクター紹介図" width="900" height="1263" loading="lazy" decoding="async"/>
-                </a>
-                <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">
-                  人物相関図
-                </figcaption>
-              </figure>
-
-              <figure class="kv">
-                <a href="assets/img/dizzy_naka0204.png" target="_blank">
-                  <img src="assets/img/dizz-return.webp" alt="Dizz 戦闘シーンイラスト" width="513" height="720" loading="lazy" decoding="async">
-                </a>
-                <figcaption class="muted" style="margin-top:6px; text-align:center; white-space:normal; word-wrap:break-word;">
-                  帰還
-                </figcaption>
-              </figure>
-            </div>
-
-            <div class="fanbox-box dizz-fanbox">
-              <a href="https://nyanyannya.fanbox.cc/posts/9164732" target="_blank" rel="noopener">
-                FANBOXで読む
-              </a>
-            </div>
-          </div>
-
-          <!-- サイドストーリー -->
-          <div class="panel" data-panel="kc" hidden>
-            <h3>綺想フヰルム（サイドストーリー）</h3>
-            <p>カドワナルカの市井の人々を描く断章的な物語。</p>
-
-            <div class="grid cols-2" style="margin-top:16px; gap:16px;">
-              <div class="card" style="text-align:center; padding:12px;">
-                <h4>リドル・マーメイド</h4>
-                <p class="muted">クラブ「マーメイド」で働く不死者を描く短編シリーズ。</p>
-                <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; background:#000;">
-                  <iframe src="https://www.youtube.com/embed/1d-OMxcAuqU" title="リドル・マーメイド 動画"
-                    style="position:absolute; top:0; left:0; width:100%; height:100%;"
-                    frameborder="0" allowfullscreen></iframe>
-                </div>
-                <p style="margin-top:8px;">
-                  <a href="https://nyanyannya.fanbox.cc/posts/7648046" target="_blank" class="button">FANBOXで読む　更新中</a>
-                </p>
-              </div>
-
-              <div class="card" style="text-align:center; padding:12px;">
-                <h4>無重力ピエロ</h4>
-                <p class="muted">夢破れた技師と記憶失った奇械人形が空を目指す物語</p>
-                <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; background:#000;">
-                  <iframe src="https://www.youtube.com/embed/Cwg0azGK_v8" title="無重力ピエロ 動画"
-                    style="position:absolute; top:0; left:0; width:100%; height:100%;"
-                    frameborder="0" allowfullscreen></iframe>
-                </div>
-                <p style="margin-top:8px;">
-                  <a href="https://nyanyannya.fanbox.cc/posts/941372" target="_blank" class="button">FANBOXで読む　完結</a>
-                </p>
+            <p class="meta">VOCAL: KAITO ／ キャラクター: ファン</p>
+            <div class="after-listen">
+              <p class="al-label">聴き終えたら</p>
+              <p class="al-copy">不幸を治す医者・ファンの物語。<br>小説でも読めます。</p>
+              <div class="al-links">
+                <a href="#story">ファンの物語を読む →</a>
               </div>
             </div>
+          </article>
+
+          <article class="song-card" data-reveal data-reveal-delay="1">
+            <h3>エル・タンゴ・エゴイスタ</h3>
+            <div class="yt-wrap" aria-label="エル・タンゴ・エゴイスタ">
+              <iframe src="https://www.youtube.com/embed/2zilNT7hgFc" title="El Tango Egoista"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <p class="meta">VOCAL: KAITO ＆ 巡音ルカ ／ キャラクター: ブルーノート ＆ ルージュ</p>
+            <div class="after-listen">
+              <p class="al-label">聴き終えたら</p>
+              <p class="al-copy">魂を狩る元死神・ルージュの物語。<br>小説でも読めます。</p>
+              <div class="al-links">
+                <a href="#story">ルージュの物語を読む →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="song-card" data-reveal data-reveal-delay="2">
+            <h3>フロイライン＝ビブリォチカ</h3>
+            <div class="yt-wrap" aria-label="フロイライン＝ビブリォチカ">
+              <iframe src="https://www.youtube.com/embed/t4gP6cC55p0" title="Fräulein=Biblioteka"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <p class="meta">VOCAL: MEIKO ／ キャラクター: チキータ</p>
+            <div class="after-listen">
+              <p class="al-label">聴き終えたら</p>
+              <p class="al-copy">規則を護る審問官・チキータの物語。<br>小説でも読めます。</p>
+              <div class="al-links">
+                <a href="#story">チキータの物語を読む →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="listen-strip" data-reveal>
+          <span class="listen-label">各配信サービスでも聴けます</span>
+          <div class="listen-links">
+            <a href="https://open.spotify.com/artist/35WjMs2c8YpOftd7VVPChv" target="_blank" rel="noopener">Spotify（旧名義）</a>
+            <a href="https://open.spotify.com/artist/7CG1mUAvK4H3QjgFDu3NAF" target="_blank" rel="noopener">Spotify（現名義）</a>
+            <a href="https://music.apple.com/jp/artist/nyanyannya-%E5%A4%A7%E5%A4%A9%E6%89%8Dp/1644580369" target="_blank" rel="noopener">Apple Music</a>
+            <a href="https://music.youtube.com/channel/UC13cTkDWK6o_TYL2tdtpJHg" target="_blank" rel="noopener">YouTube Music</a>
+            <a href="https://karent.jp/artist/pp000651" target="_blank" rel="noopener">KARENT</a>
           </div>
-        </div> <!-- /#tab-panels -->
-      </div> <!-- /.card -->
+        </div>
+      </div>
     </section>
 
-    <!-- キャラクター -->
+    <!-- ============ ストーリー ============ -->
+    <section class="section" id="story" aria-label="ストーリーガイド">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <h2>ストーリー</h2>
+          <p>童話「鉛姫」から始まった色を失った世界の物語。「本当に大切なもの」を探す旅がいくつもの章にわたって続いています。</p>
+        </div>
+        <div class="story-card" data-reveal>
+          <div class="tabs" role="tablist" aria-label="サーガ切り替え">
+            <button class="tab" id="tab-dizz" role="tab" aria-controls="panel-dizz" aria-selected="false" tabindex="-1" data-tab="dizz">DIZZ Yøu XXX IT?（前日譚）</button>
+            <button class="tab" id="tab-kado" role="tab" aria-controls="panel-kado" aria-selected="true" tabindex="0" data-tab="kado">カドワナルカ＝サーガ（本編）</button>
+            <button class="tab" id="tab-lp" role="tab" aria-controls="panel-lp" aria-selected="false" tabindex="-1" data-tab="lp">色偸るセカイの鉛姫（終章）</button>
+            <button class="tab" id="tab-kc" role="tab" aria-controls="panel-kc" aria-selected="false" tabindex="-1" data-tab="kc">綺想フヰルム（サイドストーリー）</button>
+          </div>
+
+          <div id="tab-panels">
+            <!-- 終章 -->
+            <div class="panel" id="panel-lp" role="tabpanel" aria-labelledby="tab-lp" tabindex="0" data-panel="lp" hidden>
+              <h3>色偸るセカイの鉛姫（終章）</h3>
+              <p>鉛姫リーディアが失われたセカイの色を求める物語。</p>
+              <figure class="story-figure story-figure--wide">
+                <img src="assets/img/story-lp.webp" alt="色偸るセカイの鉛姫 イラスト" width="1000" height="724" loading="lazy" decoding="async"/>
+                <figcaption>色偸るセカイの鉛姫</figcaption>
+              </figure>
+            </div>
+
+            <!-- 本編 -->
+            <div class="panel" id="panel-kado" role="tabpanel" aria-labelledby="tab-kado" tabindex="0" data-panel="kado">
+              <h3>カドワナルカ＝サーガ（本編）</h3>
+              <p>「大切なもの」をテーマにしたキャラクターごとの物語です。</p>
+              <figure class="story-figure story-figure--square">
+                <img src="assets/img/story-kado.webp" alt="カドワナルカ＝サーガ イラスト" width="1200" height="1200" loading="lazy" decoding="async"/>
+                <figcaption>カドワナルカ＝サーガ</figcaption>
+              </figure>
+              <div class="story-books">
+                <div class="book-item">
+                  <a href="https://club-majesty.booth.pm/items/1515172" target="_blank" rel="noopener">
+                    <img src="assets/img/book-biblio.webp" alt="フロイライン＝ビブリォチカ" width="500" height="701" loading="lazy" decoding="async"/>
+                    <p>フロイライン＝ビブリォチカ</p>
+                    <p>規則を絶対視する審問官の物語（電子書籍／BOOTH）</p>
+                  </a>
+                </div>
+                <div class="book-item">
+                  <a href="https://club-majesty.booth.pm/items/675061" target="_blank" rel="noopener">
+                    <img src="assets/img/book-sectrouge.webp" alt="シスター＝セクトルージュ" width="500" height="703" loading="lazy" decoding="async"/>
+                    <p>シスター＝セクトルージュ</p>
+                    <p>奇蹟の裏の闇を暴く死神の物語（電子書籍／BOOTH）</p>
+                  </a>
+                </div>
+                <div class="book-item">
+                  <a href="https://club-majesty.booth.pm/items/787487" target="_blank" rel="noopener">
+                    <img src="assets/img/book-funkbeat-dojin.webp" alt="ドクター＝ファンクビート 電子版" width="500" height="716" loading="lazy" decoding="async"/>
+                    <p>ドクター＝ファンクビート</p>
+                    <p>不幸を治す医者の物語（電子書籍／BOOTH）</p>
+                  </a>
+                </div>
+                <div class="book-item">
+                  <a href="https://www.kawade.co.jp/np/isbn/9784309027982/" target="_blank" rel="noopener">
+                    <img src="assets/img/book-funkbeat-commercial.webp" alt="ドクター＝ファンクビート 書籍版" width="500" height="734" loading="lazy" decoding="async"/>
+                    <p>ドクター＝ファンクビート</p>
+                    <p>市販書籍版（河出書房新社）</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 前日譚 DIZZ -->
+            <div class="panel" id="panel-dizz" role="tabpanel" aria-labelledby="tab-dizz" tabindex="0" data-panel="dizz" hidden>
+              <h3>DIZZ Yøu XXX IT?（前日譚）<span style="color:var(--gold);font-size:.7em;margin-left:8px">更新中</span></h3>
+              <p>魂を燃料とする奇械が文明を支える帝都アークヨルム。十八部隊の学生兵と教員たちが怪物〈トーメント〉と陰謀に挑む群像戦記。</p>
+              <div class="video">
+                <iframe src="https://www.youtube.com/embed/-bt7n34W_Vs" title="DIZZ Yøu XXX IT?"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="kv-pair">
+                <figure>
+                  <a href="assets/img/dizzy_fileomote2.png" target="_blank" rel="noopener"><img src="assets/img/dizz-duo.webp" alt="Dizz 表イラスト" width="508" height="720" loading="lazy" decoding="async"></a>
+                  <figcaption>相反する二人</figcaption>
+                </figure>
+                <figure>
+                  <a href="assets/img/DIZZ_キャラ紹介.png" target="_blank" rel="noopener"><img src="assets/img/dizz-chart.webp" alt="Dizz 人物相関図" width="900" height="1263" loading="lazy" decoding="async"></a>
+                  <figcaption>人物相関図</figcaption>
+                </figure>
+                <figure>
+                  <a href="assets/img/dizzy_naka0204.png" target="_blank" rel="noopener"><img src="assets/img/dizz-return.webp" alt="Dizz 戦闘シーン" width="513" height="720" loading="lazy" decoding="async"></a>
+                  <figcaption>帰還</figcaption>
+                </figure>
+              </div>
+              <div class="freemium-note">
+                <strong>更新中の前日譚。</strong>続きはFANBOXで読めます。
+              </div>
+              <p style="margin-top:14px"><a href="https://nyanyannya.fanbox.cc/posts/9164732" target="_blank" rel="noopener" class="btn btn-support btn-arrow">DIZZをFANBOXで読む</a></p>
+            </div>
+
+            <!-- サイドストーリー -->
+            <div class="panel" id="panel-kc" role="tabpanel" aria-labelledby="tab-kc" tabindex="0" data-panel="kc" hidden>
+              <h3>綺想フヰルム（サイドストーリー）</h3>
+              <p>カドワナルカで暮らす人々を描いた短い物語たち。</p>
+              <div class="side-grid">
+                <div class="side-item">
+                  <h4>リドル・マーメイド</h4>
+                  <p class="meta" style="color:var(--text-soft)">クラブ「マーメイド」で働く不死者を描く短編シリーズ。</p>
+                  <div class="yt-wrap"><iframe src="https://www.youtube.com/embed/1d-OMxcAuqU" title="リドル・マーメイド" allowfullscreen></iframe></div>
+                  <p><a href="https://nyanyannya.fanbox.cc/posts/7648046" target="_blank" rel="noopener" class="btn btn-support">FANBOXで読む（更新中）</a></p>
+                </div>
+                <div class="side-item">
+                  <h4>無重力ピエロ</h4>
+                  <p class="meta" style="color:var(--text-soft)">夢破れた技師と記憶を失った奇械人形が、空を目指す物語。</p>
+                  <div class="yt-wrap"><iframe src="https://www.youtube.com/embed/Cwg0azGK_v8" title="無重力ピエロ" allowfullscreen></iframe></div>
+                  <p><a href="https://nyanyannya.fanbox.cc/posts/941372" target="_blank" rel="noopener" class="btn btn-support">FANBOXで読む（完結）</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ キャラクター（モノクロ→色が戻る） ============ -->
     <section class="section" id="characters" aria-label="キャラクター">
-      <h2>メインキャラクター</h2>
-      <div class="card" style="margin-bottom:12px">
-        <strong>6つの大切なもの：</strong> 金 / 愛 / 規則 / 幸福 / 信仰 / 歌
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <h2>キャラクター</h2>
+          <p>色のない世界の鉛姫と、手放せない何かを抱えた6人。<span style="color:var(--muted)">（カードに触れると色が戻ります）</span></p>
+        </div>
+
+        <div class="char-grid">
+          <article class="char-card" data-reveal tabindex="0" style="--accent:var(--gold)">
+            <div class="portrait"><img src="assets/img/rouge_split_0.png" alt="リーディア" width="341" height="1152" loading="lazy" decoding="async"></div>
+            <div class="body">
+              <h3>鉛姫リーディア <span class="badge">???</span></h3>
+              <p class="c-meta">VOCAL: 鏡音リン ／ 色偸るセカイの鉛姫</p>
+              <p class="c-desc">色を知らない鉛の姫。セカイの色を取り戻そうとするが……。</p>
+            </div>
+          </article>
+
+          <article class="char-card" data-reveal tabindex="0" style="--accent:var(--c-money)">
+            <div class="portrait"><img src="assets/img/split_1.png" alt="キャッシュ" width="341" height="1152" loading="lazy" decoding="async"></div>
+            <div class="body">
+              <h3>キャッシュ <span class="badge">お金</span></h3>
+              <p class="c-meta">VOCAL: 鏡音レン ／ クラブ＝マジェスティ</p>
+              <p class="c-desc">商会きっての優雅で皮肉屋な取り立て屋。</p>
+            </div>
+          </article>
+
+          <article class="char-card" data-reveal tabindex="0" style="--accent:var(--c-love)">
+            <div class="portrait"><img src="assets/img/split_2.png" alt="フィロ" width="341" height="1152" loading="lazy" decoding="async"></div>
+            <div class="body">
+              <h3>フィロ <span class="badge">愛</span></h3>
+              <p class="c-meta">VOCAL: 鏡音リン ／ エンプレス＝ディスコ</p>
+              <p class="c-desc">嘘と残忍さの裏に愛と弱さを背負う皇女。</p>
+            </div>
+          </article>
+
+          <article class="char-card" data-reveal tabindex="0" style="--accent:var(--c-rule)">
+            <div class="portrait"><img src="assets/img/split_3.png" alt="チキータ" width="341" height="1152" loading="lazy" decoding="async"></div>
+            <div class="body">
+              <h3>チキータ <span class="badge">規則</span></h3>
+              <p class="c-meta">VOCAL: MEIKO ／ フロイライン＝ビブリォチカ</p>
+              <p class="c-desc">誓いの書に秘密を携えて規則を護る審問官。</p>
+            </div>
+          </article>
+
+          <article class="char-card" data-reveal tabindex="0" style="--accent:var(--c-happiness)">
+            <div class="portrait"><img src="assets/img/split_4.png" alt="ファン" width="341" height="1152" loading="lazy" decoding="async"></div>
+            <div class="body">
+              <h3>ファン <span class="badge">幸福</span></h3>
+              <p class="c-meta">VOCAL: KAITO ／ ドクター＝ファンクビート</p>
+              <p class="c-desc">不幸という病を治す自称・大天才。</p>
+            </div>
+          </article>
+
+          <article class="char-card" data-reveal tabindex="0" style="--accent:var(--c-faith)">
+            <div class="portrait"><img src="assets/img/split_5.png" alt="ルージュ" width="341" height="1152" loading="lazy" decoding="async"></div>
+            <div class="body">
+              <h3>ルージュ <span class="badge">信仰</span></h3>
+              <p class="c-meta">VOCAL: 巡音ルカ ／ シスター＝セクトルージュ</p>
+              <p class="c-desc">魂を狩る元死神。いまは修道女の衣をまとう。</p>
+            </div>
+          </article>
+
+          <article class="char-card" data-reveal tabindex="0" style="--accent:var(--c-song)">
+            <div class="portrait"><img src="assets/img/split_6.png" alt="ライカ" width="341" height="1152" loading="lazy" decoding="async"></div>
+            <div class="body">
+              <h3>ライカ <span class="badge">歌</span></h3>
+              <p class="c-meta">VOCAL: 初音ミク ／ シング＝ライカマジク</p>
+              <p class="c-desc">西の森で歌う元・革命の歌姫。</p>
+            </div>
+          </article>
+        </div>
+        <p class="char-note" style="margin-bottom:6px">気になったキャラの物語は、<a href="#story" style="color:var(--gold)">ストーリー</a>で読めます。</p>
+        <p class="char-note" style="margin-top:0">※ネタバレ配慮のため、一部の表現を簡略化しています。</p>
       </div>
-
-      <div class="grid cols-3">
-        <article class="card char-card">
-          <div class="avatar"><img src="assets/img/rouge_split_0.png" alt="リーディア" width="341" height="1152" loading="lazy" decoding="async"></div>
-          <div>
-            <h3 style="margin:0 0 6px">鉛姫リーディア <span class="badge">大切なもの：???</span></h3>
-            <p class="meta">VOCAL: 鏡音リン / 代表曲：色偸る世界の鉛姫</p>
-            <p>色を知らない鉛の姫。セカイの色を取り戻そうとするが……。</p>
-          </div>
-        </article>
-
-        <article class="card char-card">
-          <div class="avatar"><img src="assets/img/split_1.png" alt="キャッシュ" width="341" height="1152" loading="lazy" decoding="async"></div>
-          <div>
-            <h3 style="margin:0 0 6px">キャッシュ <span class="badge">大切なもの：お金</span></h3>
-            <p class="meta">VOCAL: 鏡音レン / 代表曲：クラブ＝マジェスティ</p>
-            <p>商会（ウェアハウス）きっての優雅で皮肉屋な取り立て屋。</p>
-          </div>
-        </article>
-
-        <article class="card char-card">
-          <div class="avatar"><img src="assets/img/split_2.png" alt="フィロ" width="341" height="1152" loading="lazy" decoding="async"></div>
-          <div>
-            <h3 style="margin:0 0 6px">フィロ <span class="badge">大切なもの：愛</span></h3>
-            <p class="meta">VOCAL: 鏡音リン / 代表曲：エンプレス＝ディスコ</p>
-            <p>嘘と残忍さの裏側に愛と弱さを背負う皇女。</p>
-          </div>
-        </article>
-
-        <article class="card char-card">
-          <div class="avatar"><img src="assets/img/split_3.png" alt="チキータ" width="341" height="1152" loading="lazy" decoding="async"></div>
-          <div>
-            <h3 style="margin:0 0 6px">チキータ <span class="badge">大切なもの：規則</span></h3>
-            <p class="meta">VOCAL: MEIKO / 代表曲：フロイライン＝ビブリォチカ</p>
-            <p>誓いの書に秘密を携えて規則を護る審問官。</p>
-          </div>
-        </article>
-
-        <article class="card char-card">
-          <div class="avatar"><img src="assets/img/split_4.png" alt="ファン" width="341" height="1152" loading="lazy" decoding="async"></div>
-          <div>
-            <h3 style="margin:0 0 6px">ファン <span class="badge">大切なもの：幸福</span></h3>
-            <p class="meta">VOCAL: KAITO / 代表曲：ドクター＝ファンクビート</p>
-            <p>不幸という病を治す自称大天才。</p>
-          </div>
-        </article>
-
-        <article class="card char-card">
-          <div class="avatar"><img src="assets/img/split_5.png" alt="ルージュ" width="341" height="1152" loading="lazy" decoding="async"></div>
-          <div>
-            <h3 style="margin:0 0 6px">ルージュ <span class="badge">大切なもの：信仰</span></h3>
-            <p class="meta">VOCAL: 巡音ルカ / 代表曲：シスター＝セクトルージュ</p>
-            <p>修道女の衣に身を隠す、魂を狩る元死神。</p>
-          </div>
-        </article>
-
-        <article class="card char-card">
-          <div class="avatar"><img src="assets/img/split_6.png" alt="ライカ" width="341" height="1152" loading="lazy" decoding="async"></div>
-          <div>
-            <h3 style="margin:0 0 6px">ライカ <span class="badge">大切なもの：歌</span></h3>
-            <p class="meta">VOCAL: 初音ミク / 代表曲：シング＝ライカマジク</p>
-            <p>西の森で歌う元革命の歌姫。</p>
-          </div>
-        </article>
-      </div>
-
-      <p class="meta" style="margin-top:8px">※ネタバレ配慮のため一部表現を簡略化しています。</p>
     </section>
 
-    <!-- 診断 -->
+    <!-- ============ 診断（クライマックス） ============ -->
     <section class="section" id="shindan" aria-label="キャラ診断">
-      <h2>あなたの「大切なもの」診断</h2>
-      <div class="shindan-container">
-        <!-- 背景装飾 -->
-        <div class="shindan-bg-decor" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="section-head" data-reveal style="text-align:center;margin-left:auto;margin-right:auto">
+          <h2>あなたの「大切なもの」は？</h2>
+        </div>
+        <div class="shindan-shell" data-reveal>
+          <div class="glow" aria-hidden="true"></div>
+          <div class="shindan-body" id="shindanBody">
 
-        <div class="shindan-body" id="shindanBody">
-          <!-- イントロ -->
-          <div class="shindan-phase" id="shindanIntro">
-            <div class="shindan-series-label">鉛姫シリーズ</div>
-            <h3 class="shindan-title">あなたの<br>「大切なもの」診断</h3>
-            <div class="shindan-divider"></div>
-            <p class="shindan-lead">
-              色を失った世界「カドワナルカ」――<br>
-              6人のキャラクターは、それぞれ違う<br>
-              「大切なもの」を胸に抱いている。<br><br>
-              5つの問いに答えると、<br>
-              あなたに最も近いキャラクターが分かります。
-            </p>
-            <button class="shindan-start-btn" id="shindanStart">はじめる</button>
-          </div>
-
-          <!-- 質問 -->
-          <div class="shindan-phase" id="shindanQuestion" hidden>
-            <div class="shindan-progress" id="shindanProgress"></div>
-            <div class="shindan-q-label" id="shindanQLabel"></div>
-            <p class="shindan-q-text" id="shindanQText"></p>
-            <div class="shindan-choices" id="shindanChoices"></div>
-          </div>
-
-          <!-- 結果 -->
-          <div class="shindan-phase" id="shindanResultPhase" hidden>
-            <div class="shindan-result-label">YOUR RESULT</div>
-            <div class="shindan-result-orb" id="shindanOrb"></div>
-            <h3 class="shindan-result-name" id="shindanCharName"></h3>
-            <div>
-              <span class="shindan-result-tag" id="shindanTag"></span>
-            </div>
-            <div class="shindan-result-divider" id="shindanResultDivider"></div>
-            <p class="shindan-result-desc" id="shindanDesc"></p>
-            <p class="shindan-result-vocal" id="shindanVocal"></p>
-            <p class="shindan-result-song" id="shindanSongName"></p>
-            <div class="shindan-actions">
-              <a class="shindan-share-btn" id="shindanShare" href="#" target="_blank" rel="noopener noreferrer">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                結果をシェアする
-              </a>
-              <button class="shindan-retry-btn" id="shindanRetry">もう一度やる</button>
-            </div>
-            <div class="shindan-result-footer">
-              <p>鉛姫シリーズの世界をもっと知りたい方は<br>
-                <a id="shindanGuideLink" href="#top">公式ガイド →</a>
+            <div class="shindan-phase" id="shindanIntro">
+              <div class="s-series">鉛姫シリーズ 診断</div>
+              <h3 class="s-title">あなたの<br>「大切なもの」診断</h3>
+              <div class="s-divider"></div>
+              <p class="s-lead">
+                あなたがどうしても手放せないものは<br>何だろう。<br><br>
+                5つの問いに答えると、<br>あなたに近い人が見えてきます。
               </p>
+              <button class="s-start" id="shindanStart">はじめる</button>
+            </div>
+
+            <div class="shindan-phase" id="shindanQuestion" hidden>
+              <div class="s-progress" id="shindanProgress"></div>
+              <div class="s-qlabel" id="shindanQLabel"></div>
+              <p class="s-qtext" id="shindanQText"></p>
+              <div class="s-choices" id="shindanChoices"></div>
+            </div>
+
+            <div class="shindan-phase" id="sResult" hidden>
+              <div class="s-rlabel">Your Result</div>
+              <div class="s-orb" id="shindanOrb"></div>
+              <h3 class="s-rname" id="shindanCharName"></h3>
+              <div><span class="s-rtag" id="shindanTag"></span></div>
+              <div class="s-rdivider" id="shindanResultDivider"></div>
+              <p class="s-rdesc" id="shindanDesc"></p>
+              <p class="s-rvocal" id="shindanVocal"></p>
+              <p class="s-rsong" id="shindanSongName"></p>
+
+              <!-- 応援ブリッジ（最熱量を支援へ橋渡し。JSで色を差し込む） -->
+              <div class="s-bridge" id="shindanBridge">
+                <p class="bridge-head" id="bridgeHead"></p>
+                <p class="bridge-copy" id="bridgeCopy"></p>
+                <div class="s-bridge-actions">
+                  <a class="btn btn-support btn-arrow" id="bridgeSupport" href="#" target="_blank" rel="noopener">この世界をFANBOXで応援する</a>
+                  <a class="btn btn-ghost" id="bridgeListen" href="#" target="_blank" rel="noopener">代表曲を聴く</a>
+                </div>
+                <p class="s-fineprint">月500円からいつでも始められます。気が向いた月だけで大丈夫です。</p>
+              </div>
+
+              <div class="s-actions">
+                <a class="s-share" id="shindanShare" href="#" target="_blank" rel="noopener noreferrer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  結果をXでシェア
+                </a>
+                <button class="s-retry" id="shindanRetry">もう一度やる</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 応援（FANBOX）＝この世界に色を足す ============ -->
+    <section class="support" id="support" aria-label="FANBOXで応援する">
+      <div class="support-art" aria-hidden="true">
+        <img src="assets/img/story-kado.webp" alt="" width="1200" height="1200" loading="lazy" decoding="async" />
+      </div>
+      <div class="support-inner">
+        <div data-reveal>
+          <h2>FANBOXのこと</h2>
+          <p class="support-lead">鉛姫シリーズは <strong>nyanyannya</strong> が十年以上つくり続けてきた世界です。<br>FANBOXには本編の先の物語や制作中の記録を置いています。よかったら見にきてください。</p>
+          <p class="support-lead" style="margin-bottom:8px"><span style="color:var(--gold)">本を読んでくれた方へ。</span>そこに書かれなかった話も、いまここで続いています。</p>
+        </div>
+
+        <div class="support-perks">
+          <div class="perk" data-reveal><div class="perk-ico">📖</div><h3>物語の続き</h3><p>前日譚やサイドストーリー、掌編など。本編では描かれなかった話。</p></div>
+          <div class="perk" data-reveal data-reveal-delay="1"><div class="perk-ico">🗝️</div><h3>世界の裏側</h3><p>奇械やカドワナルカ、十八部隊など。世界を形づくる設定資料。</p></div>
+          <div class="perk" data-reveal data-reveal-delay="2"><div class="perk-ico">🎼</div><h3>音源と制作の記録</h3><p>アレンジ音源など。楽曲や物語が生まれていく過程。</p></div>
+        </div>
+
+        <div class="support-cta" data-reveal>
+          <a href="https://nyanyannya.fanbox.cc/" target="_blank" rel="noopener" class="btn btn-support btn-arrow">nyanyannya FANBOX を見る</a>
+          <p class="support-fineprint">月500円から。続きが気になったら、好きな話から好きなだけで大丈夫です。</p>
+        </div>
+
+        <div class="support-examples" data-reveal>
+          <p class="ex-label">— たとえば、こんな裏話も —</p>
+          <div class="slider" data-slider>
+            <div id="fanboxTrack" aria-live="polite"><!-- fanbox.js が実例を注入 --></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 二次創作 ============ -->
+    <section class="section" id="fanwork" aria-label="二次創作について">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <h2>二次創作について</h2>
+          <p>鉛姫シリーズの二次創作は歓迎です。イラストや小説、動画、アレンジなど、個人の非営利の範囲で自由に楽しんでください。</p>
+        </div>
+        <div class="fanwork-grid">
+          <div class="fanwork-main" data-reveal>
+            <p>むずかしく考えなくて大丈夫。まずはこの4つを守ってもらえれば基本的にOKです。</p>
+            <ul class="rule-list">
+              <li><p class="r-q">公式の作品をそのまま無断転載しない</p></li>
+              <li><p class="r-q">ほかの人の二次創作を、作りかえて投稿しない</p></li>
+              <li><p class="r-q">説明文に、元の作品名・作者名（nyanyannya）と URL を書く</p></li>
+              <li><p class="r-q">音楽は、買ったものか公式が配っている音源を使う</p></li>
+            </ul>
+            <p>同人（即売会での頒布など）もピアプロ・キャラクター・ライセンスに沿ってOKです。年齢制限のあるものもかまいません。</p>
+            <p>音源を使うときは、YouTube なら Content ID、ニコニコなら親作品に登録してください。転載（歌詞や字幕をつけただけの動画など）や三次利用・再配布はできません。使用報告はいりません。</p>
+            <p>配信の切り抜きは、収益化なしで概要欄に元配信へのリンクをつければOKです（YouTube はクリップ機能が便利です）。</p>
+            <p style="color:var(--muted);font-size:13.5px;margin-top:14px">細かいところは公式ガイドラインにまとめています。</p>
+            <p style="margin-top:14px"><a href="https://nyanyannya.fanbox.cc/posts/220444" target="_blank" rel="noopener" class="btn btn-ghost btn-arrow">公式ガイドラインを読む</a></p>
+          </div>
+          <div class="fanwork-side">
+            <div class="side-block" data-reveal>
+              <h3>素材を使う</h3>
+              <p>アレンジや動画制作に使えるオフボーカル音源があります。</p>
+              <a href="https://club-majesty.booth.pm/items/3154475" target="_blank" rel="noopener" class="link-quiet">オフボーカル音源（BOOTH）→</a>
+            </div>
+            <div class="side-block" data-reveal data-reveal-delay="1">
+              <h3>設定資料を参考にする</h3>
+              <p>世界観や奇械などの設定資料は、FANBOXで少しずつ公開しています。</p>
+              <a href="https://nyanyannya.fanbox.cc/" target="_blank" rel="noopener" class="link-quiet">設定資料（FANBOX）→</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 時系列 -->
-    <section class="section" id="timeline" aria-label="時系列">
-      <h2>カドワナルカ時系列</h2>
-      <div class="card">
-        <ol class="timeline">
-          <li class="tl-item"><strong>アークヨルム革命</strong>　楽曲：赫焉のフィロソフィア</li>
-          <li class="tl-item"><strong>ノースエンド騒乱(第二次アークヨルム革命)</strong> 　楽曲：DIZZ Yøu XXX IT?</li>
-          <li class="tl-item"><strong>カドワナルカ＝サーガ</strong>　楽曲：ドクター＝ファンクビート 他</li>
-          <li class="tl-item"><strong>色偸るセカイの鉛姫</strong>　楽曲：ディサイド！ 他</li>
-          <li class="tl-item"><strong>エピローグ</strong></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- 用語 -->
-    <section class="section" id="glossary" aria-label="用語ミニ辞典">
-      <h2>用語ミニ辞典</h2>
-      <div class="grid cols-2">
-        <div class="card"><strong>アークヨルム：</strong> ソフィア帝を頂点とする国家機構で、首都ハー・アークヨルムを中心に学術・軍事を統べる支配体制。</div>
-        <div class="card"><strong>十八部隊（ディジュイット）：</strong> 首都防衛軍プラエトリアニの指揮下に置かれた外国人部隊で、奇械の研究開発と実戦運用を担う精鋭。</div>
-        <div class="card"><strong>商会（ウェアハウス）：</strong> キスクァ都市部に根ざす経済組織で、物資供給や裏取引など軍の補給とも密接に関わる存在。</div>
-        <div class="card"><strong>魂（キャッシュ）：</strong> 本世界における主要エネルギー資源で、人間の魂を抽出・精製し、動力源として利用するもの。</div>
-        <div class="card"><strong>奇械（マキナ）：</strong> 魂を動力源として動く道具類の総称で、兵器から生活器具まで多様に存在する独自技術体系。</div>
-        <div class="card"><strong>トーメント：</strong> 奇械や魂の乱用により生じる異形の怪物で、人間社会に災厄をもたらす超常存在。</div>
-      </div>
-    </section>
-
-    <!-- FANBOX ピックアップ（日付なし／JS注入。trackは空） -->
-    <section class="section" id="fanbox" aria-label="FANBOX最新">
-      <h2>FANBOX ピックアップ記事</h2>
-      <p class="muted">制作記・設定資料・先行公開など。</p>
-      <div class="slider" data-slider>
-        <div class="track" id="fanboxTrack" aria-live="polite">
-          <!-- fanbox.js がアクセス毎に3件を注入（タイトル＋抜粋のみ／日付なし） -->
+    <!-- ============ 資料室（時系列・用語：降格） ============ -->
+    <section class="section archive" id="archive" aria-label="資料室">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <h2>資料室</h2>
+          <p>時系列と用語。じっくり世界を知りたい人へ。</p>
+        </div>
+        <div class="grid cols-2" style="align-items:start">
+          <div data-reveal>
+            <h3 style="font-family:var(--serif);font-size:18px;margin:0 0 14px;color:var(--text-soft)">カドワナルカ時系列</h3>
+            <ol class="timeline">
+              <li class="tl-item"><strong>アークヨルム革命</strong>　楽曲：赫焉のフィロソフィア</li>
+              <li class="tl-item"><strong>ノースエンド騒乱（第二次アークヨルム革命）</strong>　楽曲：DIZZ Yøu XXX IT?</li>
+              <li class="tl-item"><strong>カドワナルカ＝サーガ</strong>　楽曲：ドクター＝ファンクビート 他</li>
+              <li class="tl-item"><strong>色偸るセカイの鉛姫</strong>　楽曲：ディサイド！ 他</li>
+              <li class="tl-item"><strong>エピローグ</strong></li>
+            </ol>
+          </div>
+          <div data-reveal data-reveal-delay="1">
+            <h3 style="font-family:var(--serif);font-size:18px;margin:0 0 14px;color:var(--text-soft)">用語ミニ辞典</h3>
+            <div class="glossary-grid">
+              <div class="term"><strong>奇械（マキナ）：</strong>魂を動力源として動く道具類の総称。兵器から生活器具まで。</div>
+              <div class="term"><strong>魂（キャッシュ）：</strong>本世界の主要エネルギー資源。人間の魂を精製し動力源とする。</div>
+              <div class="term"><strong>商会（ウェアハウス）：</strong>キスクァ都市部に根ざす経済組織。軍の補給とも密接に関わる。</div>
+              <div class="term"><strong>トーメント：</strong>奇械や魂の乱用により生じる異形の怪物。</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 公式リンク -->
+    <!-- ============ 公式リンク ============ -->
     <section class="section" id="links" aria-label="公式リンク">
-      <h2>公式/関連リンク</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3 style="margin-top:0">YouTube</h3>
-          <p class="muted">公式チャンネル／代表曲プレイリストなど。</p>
-          <p><a href="https://www.youtube.com/channel/UC13cTkDWK6o_TYL2tdtpJHg" target="_blank" rel="noopener">YouTube 公式チャンネルへ</a></p>
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <h2>公式・関連リンク</h2>
         </div>
-        <div class="card">
-          <h3 style="margin-top:0">Pixiv FANBOX</h3>
-          <p class="muted">制作記・設定資料・先行公開。支援はこちら。</p>
-          <p><a href="https://nyanyannya.fanbox.cc/" target="_blank" rel="noopener">nyanyannya FANBOX へ</a></p>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">BOOTH（クラブ＝マジェスティ）</h3>
-          <p class="muted">小説・CD・グッズの購入はこちら。</p>
-          <p><a href="https://club-majesty.booth.pm/" target="_blank" rel="noopener">BOOTH ショップへ</a></p>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">X（旧Twitter）</h3>
-          <p class="muted">最新情報や告知はこちらから。</p>
-          <p><a href="https://x.com/neko_nekokan" target="_blank" rel="noopener">nyanyannya Xアカウントへ</a></p>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">KARENT（ディスコグラフィー）</h3>
-          <p class="muted">リリース楽曲一覧、音楽配信はこちらから</p>
-          <p><a href="https://karent.jp/artist/pp000651" target="_blank" rel="noopener">KARENTへ</a></p>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">ピアプロ（インスト配布等）</h3>
-          <p class="muted">一部楽曲のインスト音源や歌詞を配付</p>
-          <p><a href="https://piapro.jp/nyanyannya_nekokan" target="_blank" rel="noopener">ピアプロへ</a></p>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">pixiv（小説）</h3>
-          <p class="muted">一部小説を無料で公開中。さわりだけ読みたい方はこちら。</p>
-          <p><a href="https://www.pixiv.net/users/4055693" target="_blank" rel="noopener">pixiv 作者ページへ</a></p>
+        <div class="links-grid">
+          <div class="link-card" data-reveal><h3>YouTube（公式チャンネル）</h3><p>MV一覧・チャンネル登録はこちら。</p><a href="https://www.youtube.com/channel/UC13cTkDWK6o_TYL2tdtpJHg" target="_blank" rel="noopener">チャンネルへ →</a></div>
+          <div class="link-card" data-reveal><h3>BOOTH（クラブ＝マジェスティ）</h3><p>小説・CD・グッズの購入はこちら。</p><a href="https://club-majesty.booth.pm/" target="_blank" rel="noopener">ショップへ →</a></div>
+          <div class="link-card" data-reveal><h3>X（旧Twitter）</h3><p>最新情報や告知はこちら。</p><a href="https://x.com/neko_nekokan" target="_blank" rel="noopener">アカウントへ →</a></div>
+          <div class="link-card" data-reveal><h3>ピアプロ</h3><p>一部楽曲のインスト音源や歌詞を配布。</p><a href="https://piapro.jp/nyanyannya_nekokan" target="_blank" rel="noopener">ピアプロへ →</a></div>
+          <div class="link-card" data-reveal><h3>pixiv（小説）</h3><p>一部小説を無料公開中。さわりだけ読みたい方へ。</p><a href="https://www.pixiv.net/users/4055693" target="_blank" rel="noopener">作者ページへ →</a></div>
         </div>
       </div>
     </section>
 
-    <!-- 二次創作ガイドライン -->
-    <section class="section" id="fanwork" aria-label="二次創作について">
-      <h2>二次創作について</h2>
-      <div class="card">
-        <p>鉛姫シリーズの二次創作（イラスト、小説、動画、音楽アレンジ等）は歓迎しています。個人の非営利利用の範囲でご自由にお楽しみください。</p>
-        <p>詳しいガイドラインは<a href="https://nyanyannya.fanbox.cc/posts/220444" target="_blank" rel="noopener">FANBOXのガイドライン記事</a>をご確認ください。</p>
-        <p>素材については<a href="https://club-majesty.booth.pm/items/3154475" target="_blank" rel="noopener">BOOTHのオフボーカル音源</a>をご活用ください。</p>
-      </div>
-    </section>
   </main>
 
   <footer>
     <div class="wrap foot">
-      <div>© <span id="year"></span> Lead Princess Series (Guide)</div>
-      <div>
-        <a href="#top">Top</a> / <a href="#story">Story</a> / <a href="#characters">Characters</a> / <a href="#timeline">Timeline</a>
-      </div>
+      <div class="foot-brand">© <span id="year"></span> Lead Princess Series — 鉛姫シリーズ</div>
       <div class="foot-note" aria-label="サイト運営についての注記">
         <p>※本活動は日本語で行っています。内容・運営は日本国内の制作環境に基づきます。</p>
         <p lang="en">This activity is conducted in Japanese, based on the creative environment in Japan.</p>
@@ -513,7 +546,6 @@
     </div>
   </footer>
 
-  <!-- 外部JS（順序維持） -->
   <script src="assets/js/app.js" defer></script>
   <script src="assets/js/fanbox.js" defer></script>
 </body>
