@@ -191,7 +191,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function showResult() {
-    const ch = CHARACTERS[pickWinner()];
+    const winner = pickWinner();
+    const ch = CHARACTERS[winner];
+    if (window.__track) window.__track('diag', 'result:' + winner);
 
     fadeTransition(() => {
       showPhase('result');
@@ -242,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('click', (e) => {
     if (e.target.closest('#shindanStart')) {
+      if (window.__track) window.__track('diag', 'start');
       fadeTransition(() => { currentQ = 0; answers = []; showPhase('question'); renderQuestion(); });
     }
     if (e.target.closest('#shindanRetry')) {
