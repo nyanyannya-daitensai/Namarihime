@@ -91,16 +91,14 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   const CHANNEL = 'https://www.youtube.com/channel/UC13cTkDWK6o_TYL2tdtpJHg';
-  // ▼ 直リンク未設定の楽曲：公式動画IDが分かれば songUrl を 'https://www.youtube.com/watch?v=___' に置換し
-  //   songDirect を true にしてください（現状は公式チャンネルへ誘導＝検索結果ページには飛ばさない安全策）。
-  //   未設定: クラブ＝マジェスティ / エンプレス＝ディスコ / シスター＝セクトルージュ / シング＝ライカマジク
+  // 公式動画IDが未確認の曲だけCHANNELへ誘導する。
   const CHARACTERS = {
     money:     { name:"キャッシュ", theme:"お金",   vocal:"VOCAL: 鏡音レン", song:"クラブ＝マジェスティ", img:"assets/img/split_1.png", focusY:"30%",
                  desc:"「では御支払いを──」\n商会きっての優雅で皮肉屋な取り立て屋。\n金こそが世界を動かす真理だと知っている。",
-                 color:"#5B9BE8", songUrl: CHANNEL, songDirect:false },
+                 color:"#5B9BE8", songUrl: "https://www.youtube.com/watch?v=jTHP5J61ekY", songDirect:true },
     love:      { name:"フィロ",     theme:"愛",     vocal:"VOCAL: 鏡音リン", song:"エンプレス＝ディスコ", img:"assets/img/split_2.png", focusY:"35%",
                  desc:"嘘と残忍さの裏側に\n愛と弱さを背負う皇女。\nその手が求めるのは、ただひとつの温もり。",
-                 color:"#ED93B1", songUrl: CHANNEL, songDirect:false },
+                 color:"#ED93B1", songUrl: "https://www.youtube.com/watch?v=6wsnmyv0g40", songDirect:true },
     rule:      { name:"チキータ",   theme:"規則",   vocal:"VOCAL: MEIKO",     song:"フロイライン＝ビブリォチカ", img:"assets/img/split_3.png", focusY:"35%",
                  desc:"「仕方ないね規則だもん」\n誓いの書に秘密を携えて規則を護る審問官。\nルールは絶対。違えるな。",
                  color:"#B07FD9", songUrl: "https://www.youtube.com/watch?v=t4gP6cC55p0", songDirect:true },
@@ -109,10 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
                  color:"#5DCAA5", songUrl: "https://www.youtube.com/watch?v=CPxxurEcGTw", songDirect:true },
     faith:     { name:"ルージュ",   theme:"信仰",   vocal:"VOCAL: 巡音ルカ", song:"シスター＝セクトルージュ", img:"assets/img/split_5.png", focusY:"28%",
                  desc:"「信じたんでしょう？ いいじゃない」\n修道女の衣に身を隠す、魂を狩る元死神。\n祈りの先にあるのは救済か、それとも――",
-                 color:"#E14B45", songUrl: CHANNEL, songDirect:false },
+                 color:"#E14B45", songUrl: "https://www.youtube.com/watch?v=GNuS9p9Am00", songDirect:true },
     song:      { name:"ライカ",     theme:"歌",     vocal:"VOCAL: 初音ミク", song:"シング＝ライカマジク", img:"assets/img/split_6.png", focusY:"33%",
                  desc:"「名前が歌詞なら、\nきっとその人生は旋律だ」\n西の森で歌う元革命の歌姫。",
-                 color:"#3EC9BD", songUrl: CHANNEL, songDirect:false },
+                 color:"#3EC9BD", songUrl: "https://www.youtube.com/watch?v=pUOs7Cg0XkM", songDirect:true },
   };
 
   let currentQ = 0;
