@@ -86,9 +86,7 @@ header{
 .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;height:68px}
 .brand{display:flex;align-items:baseline;gap:10px;font-family:var(--serif);font-weight:800;font-size:21px;letter-spacing:.06em;color:var(--text)}
 .brand .seal{
-  width:11px;height:11px;border-radius:50%;align-self:center;
-  background:radial-gradient(circle at 30% 30%, #fbe4a8, var(--gold-deep));
-  box-shadow:0 0 14px var(--gold-glow);
+  width:20px;height:20px;flex-shrink:0;align-self:center;color:var(--text);
 }
 .brand small{font-family:var(--latin);font-size:13px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase;font-style:italic}
 .menu{display:flex;gap:20px;flex-wrap:wrap;justify-content:flex-end}
@@ -437,4 +435,22 @@ footer{border-top:1px solid var(--line);background:var(--ink)}
   .hero-art img{animation:none;filter:saturate(1.05)}
   [data-reveal]{opacity:1;transform:none}
   .char-card .portrait img{filter:grayscale(0)}
+}
+
+/* マスターマーク ロックアップ（ヒーロー） */
+.hero-lockup{
+  display:flex;
+  align-items:center;
+  gap:clamp(14px,2.2vw,24px);
+  margin:0 0 14px;
+}
+.hero-lockup-text{display:flex;flex-direction:column}
+.hero-lockup h1{margin:0}
+.hero-lockup .hero-subbrand{margin:0 0 4px}
+.hero-mark{
+  width:auto;
+  height:clamp(52px,8vw,80px);
+  flex-shrink:0;
+  color:rgba(233,228,216,.82);
+  filter:drop-shadow(0 2px 14px rgba(0,0,0,.45));
 }
